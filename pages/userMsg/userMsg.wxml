@@ -1,0 +1,31 @@
+<van-cell-group>
+  <van-field value="{{ nickname }}" clearable label="昵称" icon="arrow" placeholder-style="text-align: right" placeholder="请输入昵称" bind:confirm="confirmName" />
+  
+  <van-field value="{{ gender }}" clearable label="性别" disabled icon="arrow" placeholder-style="text-align: right" placeholder="{{birthday}}" bindtap="showGenderPopup" />
+
+  <van-popup show="{{ showGender }}" position="bottom" custom-style="height: 25%;background-color: #eee" bind:click-overlay="onClose">
+    <view class="total">
+      <view class="secret" bindtap="chooseGender" data-gender="{{0}}">保密</view>
+      <view class="male" bindtap="chooseGender" data-gender="{{1}}">男</view>
+      <view class="female" bindtap="chooseGender" data-gender="{{2}}">女</view>
+    </view>
+  </van-popup>
+
+  <van-field value="{{ birthday }}" clearable label="生日" disabled icon="arrow" placeholder-style="text-align: right" placeholder="{{birthday}}" bindtap="showDataPopup" />
+
+  <van-popup show="{{ showData }}" position="bottom" custom-style="height: 40%;background-color: #eee" bind:click-overlay="onClose">
+    <van-datetime-picker type="date" value="{{ currentDate }}" bind:confirm="confirmBirthday" bind:cancel="cancelBirthday" min-date="{{ minDate }}" formatter="{{ formatter }}" />
+  </van-popup>
+
+  <van-field value="{{province}}{{city}}" clearable label="城市" disabled icon="arrow" placeholder-style="text-align: right" placeholder="{{province}}{{city}}" bindtap="showCityPopup" />
+
+  <van-popup show="{{ showCity }}" position="bottom" custom-style="height: 40%;background-color: #eee" bind:click-overlay="onClose">
+    <van-area area-list="{{ areaList }}" columns-num="{{ 2 }}" bind:confirm='confirmCity' bind:cancel="cancelCity"/>
+  </van-popup>
+
+  <van-field value="{{ signature }}" label="个性签名" type="textarea" placeholder-style="text-align: right" placeholder='一句话介绍' autosize border="{{ false }}" bind:change='confirmSignature' />
+</van-cell-group>
+
+<view class="btn" bindtap="update">
+  确认修改
+</view>

@@ -1,0 +1,76 @@
+.singer {
+  padding: 0 18rpx;
+}
+
+.singer .category {
+  width: 100%;
+  white-space: nowrap;
+  margin-top: 40rpx
+}
+
+.singer .category .items {
+  display: inline-block;
+  width: 130rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-align: center;
+}
+.singer .category .items .item{
+  padding: 10rpx 10rpx;
+  color: #666
+}
+.singer .category .items .font{
+  color: black;
+  font-weight: 700;
+  padding: 10rpx 10rpx;
+  border-bottom: 4rpx solid #C20C0C
+}
+
+.singer .letter {
+  width: 100%;
+  white-space: nowrap;
+  margin-top: 40rpx
+}
+
+.singer .letter .items {
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding: 10rpx 10rpx;
+  text-align: center;
+}
+.singer .letter .items .item{
+  padding: 10rpx 10rpx
+}
+.singer .letter .items .font{
+  padding: 10rpx 10rpx;
+  color: white;
+  background: #C20C0C
+}
+
+.singer .singerMsg {
+  height: 900rpx;
+  padding: 40rpx 0;
+}
+
+.singer .singerMsg .item {
+  padding: 40rpx 20rpx;
+  display: flex
+}
+
+.singer .singerMsg .item .headPortrait {
+  width: 120rpx;
+  height: 120rpx;
+  
+}
+.singer .singerMsg .item .headPortrait image{
+  width: 100%;
+  height: 100%;
+  border-radius: 50%
+}
+.singer .singerMsg .item .name{
+  line-height: 120rpx;
+  margin-left: 30rpx
+}

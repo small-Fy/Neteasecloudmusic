@@ -1,0 +1,101 @@
+<import src="../../lib/wxParse/wxParse.wxml" />
+
+<view class="backgroundImg">
+  <image src="{{djRadio.picUrl}}"></image>
+</view>
+
+<view class="mains">
+  <view class="left">
+    <view class="djName">{{djRadio.name}}</view>
+    <view class="subCount">{{djRadio.subCount}}已订阅</view>
+  </view>
+  <view class="right">
+    <van-icon name="star-o" color="white" />订阅</view>
+</view>
+
+
+<view class="content">
+  <!-- <van-sticky> -->
+  <view class="top">
+    <view class="details {{topClick===0?'font':''}}" bindtap="clickTop" data-index="{{0}}">详情</view>
+    <view class="project {{topClick===1?'font':''}}" bindtap="clickTop" data-index="{{1}}">节目</view>
+  </view>
+  <!-- </van-sticky> -->
+  <view class="inner">
+    <view class="details" wx:if="{{topClick===0}}">
+      <view class="title">主播</view>
+      <view class="dj">
+        <view class="left">
+          <view class="avatarImg">
+            <image src="{{djRadio.dj.avatarUrl}}"></image>
+          </view>
+          <view class="avater">
+            <view class="nickname">{{djRadio.dj.nickname}}</view>
+            <view class="description">{{djRadio.dj.description}}</view>
+          </view>
+        </view>
+        <view class="right">
+          <van-icon name="arrow" color="#666" />
+        </view>
+      </view>
+      <view class="title">电台内容简介</view>
+      <view class="category">分类:
+        <van-tag plain size="medium" color="#c20c0c" class="tag">{{djRadio.category}}</van-tag>
+      </view>
+      <template is="wxParse" data="{{wxParseData:article.nodes}}" />
+      <view class="title">精彩评论</view>
+      <view class="item" wx:for="{{djRadio.commentDatas}}" wx:key="{{index}}">
+        <view class="avatarImg">
+          <image src="{{item.userProfile.avatarUrl}}"></image>
+        </view>
+        <view class="userProfile">
+          <view class="nickname">{{item.userProfile.nickname}}</view>
+          <view class="content">{{item.content}}</view>
+          <view class="programName">{{item.programName}}</view>
+        </view>
+      </view>
+    </view>
+    <view class="programs" wx:if="{{topClick===1}}">
+      <view class="top">
+        <view class="left">共{{programsTotail}}期</view>
+        <view class="right">
+          <view class="sorting" bindtap="sorting">
+            <view class="icon">
+              <van-icon name="{{sort[sortIndex]}}" size="50rpx" />
+            </view>
+            <view class="text">排序</view>
+          </view>
+          <view class="choose">
+            <view class="icon">
+              <van-icon name="bars" size="45rpx" />
+            </view>
+            <view class="text">多选</view>
+          </view>
+        </view>
+      </view>
+      <view class="program" wx:for="{{programs}}" wx:key="{{index}}" bindtap="playMusic" data-index="{{index}}">
+        <view class="conditions {{clickItem===index?'font':''}}">
+          <view class="left">
+            <view class="index" wx:if="{{clickItem!==index}}">{{item.serialNum}}</view>
+            <view class="icon" wx:if="{{clickItem===index}}">
+              <image src="../../images/horn.png"></image>
+            </view>
+            <view class="music">
+              <view class="name">{{item.name}}</view>
+              <view class="tags">
+                <view class="createTime">{{item.createTime}}</view>
+                <view class="listenerCount">
+                  <van-icon name="play-circle-o"  class="icons"/>{{item.listenerCount}}</view>
+                <view class="duration">
+                  <van-icon name="underway-o" class="icons"/>{{item.duration}}</view>
+              </view>
+            </view>
+          </view>
+          <view class="right">
+            <image src="../../images/menu.png"></image>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

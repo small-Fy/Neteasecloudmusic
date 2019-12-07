@@ -1,0 +1,52 @@
+<view class="me">
+  <view class="notLogin">
+    <view class="top">
+      <van-tabs bind:click="switchLogin">
+        <van-tab title="手机号登录" name="手机号登录">
+          <view class="phoneNumber">
+            <view class="phone">
+              <view class="required">*</view>
+              <view class="phone-icon">
+                <image src="../../images/phone.png"></image>
+              </view>
+              <input value="{{phone}}" placeholder="请输入手机号" type="text" bindconfirm="completePhone"></input>
+            </view>
+            <view class="password">
+              <view class="required">*</view>
+              <view class="password-icon">
+                <image src="../../images/password.png"></image>
+              </view>
+              <input value="{{password}}" placeholder="请输入密码" type="password" bindconfirm="completePassword"></input>
+            </view>
+          </view>
+        </van-tab>
+        <van-tab title="邮箱登录" name="邮箱登录">
+          <view class="phoneNumber">
+            <view class="phone">
+              <view class="required">*</view>
+              <view class="phone-icon">
+                <image src="../../images/email.png"></image>
+              </view>
+              <input value="{{email}}" placeholder="请输入邮箱" type="text" bindconfirm="completeEmail"></input>
+            </view>
+            <view class="password">
+              <view class="required">*</view>
+              <view class="password-icon">
+                <image src="../../images/password.png"></image>
+              </view>
+              <input value="{{password}}" placeholder="请输入密码" type="password" bindconfirm="completePassword"></input>
+            </view>
+          </view>
+        </van-tab>
+      </van-tabs>
+    </view>
+    <view class="btn">
+      <view class="login" bindtap="login">
+        立即登录
+      </view>
+      <view class="register" bindtap="register">
+        立即注册
+      </view>
+    </view>
+  </view>
+</view>

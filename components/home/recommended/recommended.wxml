@@ -1,0 +1,95 @@
+<view class="topMusicList">
+  <view class="left">推荐歌单</view>
+  <view class="right ">歌单广场</view>
+</view>
+
+<view class="musicList">
+  <view class="item" wx:for="{{musicList}}" wx:key="{{index}}" bindtap="musicDetail" data-id="{{item.id}}" data-copywriter="{{item.copywriter}}">
+    <view class="img">
+      <image src="{{item.picUrl}}"></image>
+    </view>
+    <view class="name">{{item.name}}</view>
+    <view class="playCount">
+      <view class="img">
+        <image src="../../../images/play.png"></image>
+      </view>
+      <view>{{item.changeCount}}</view>
+    </view>
+  </view>
+</view>
+
+
+<view class="topNew">
+  <view class="left">
+    <view class="newMusic {{flag?'font':''}}" bindtap="change" data-flag="{{true}}">新碟</view>
+    <view class="line"></view>
+    <view class="newMusic {{flag?'':'font'}}" bindtap="change" data-flag="{{false}}">新歌</view>
+  </view>
+  <view class="right ">更多新碟</view>
+</view>
+
+<view class="newDisc" wx:if="{{flag}}">
+  <view class="item" wx:for="{{albumsDisc}}" wx:key="{{index}}" bindtap="discDetail" data-id="{{item.id}}">
+    <view class="img">
+      <image src="{{item.picUrl}}"></image>
+    </view>
+    <view class="name">{{item.name}}</view>
+  </view>
+</view>
+
+<view class="newMusic" wx:if="{{!flag}}">
+  <view class="item" wx:for="{{albumsMusic}}" wx:key="{{index}}" bindtap="musiscDetail" data-item="{{item}}">
+    <view class="img">
+      <image src="{{item.album.blurPicUrl}}"></image>
+    </view>
+    <view class="name">{{item.album.name}}</view>
+    <view class="playCount">
+      <view>{{item.changeCount}}</view>
+    </view>
+  </view>
+</view>
+
+<view class="topMusicList">
+  <view class="left">音乐新势力</view>
+  <view class="right ">新音乐</view>
+</view>
+
+<view class="newPower">
+  <view class="item" wx:for="{{newPower}}" wx:key="{{index}}">
+    <view class="img">
+      <image src="{{item.song.album.picUrl}}"></image>
+    </view>
+    <view class="name">{{item.song.album.name}}</view>
+    <view class="playCount">
+      <view>{{item.changeCount}}</view>
+    </view>
+  </view>
+</view>
+
+<view class="topMusicList">
+  <view class="left">推荐电台</view>
+  <view class="right ">电台广场</view>
+</view>
+
+<view class="newPower">
+  <view class="item" wx:for="{{radios}}" wx:key="{{index}}" bindtap="radiosDetail" data-item="{{item}}">
+    <view class="img">
+      <image src="{{item.picUrl}}"></image>
+    </view>
+    <view class="name">{{item.name}}</view>
+  </view>
+</view>
+
+<view class="topMusicList">
+  <view class="left">推荐节目</view>
+  <view class="right ">更多节目</view>
+</view>
+
+<view class="newProgram">
+  <view class="item" wx:for="{{program}}" wx:key="{{index}}">
+    <view class="img">
+      <image src="{{item.coverUrl}}"></image>
+    </view>
+    <view class="name">{{item.name}}</view>
+  </view>
+</view>

@@ -1,0 +1,20 @@
+<scroll-view scroll-y="true" style="height: 1020rpx;" bindscrolltolower="toBottom">
+ <view class="inner">
+  <view class="item" wx:for="{{searchMsg}}" wx:key="{{index}}">
+    <view class="left">
+      <view class="img">
+        <image src="{{item.avatarUrl}}"></image>
+      </view>
+      <view class="singer">
+        <view class="name">{{item.nickname}}</view>
+        <view class="gender" wx:if="{{item.gender!==0}}">
+          <image src="{{genderList[item.gender]}}"></image>
+        </view>
+      </view>
+    </view>
+    <view class="right">
+      <text class="text">+\t关注</text>
+    </view>
+  </view>
+ </view>
+</scroll-view>

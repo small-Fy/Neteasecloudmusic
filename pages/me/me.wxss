@@ -1,0 +1,124 @@
+.me {
+  padding: 0 18rpx;
+}
+.me .notLogin{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%)
+}
+.me .notLogin .text{
+  color: #C20C0C
+}
+.me .notLogin .btn{
+  padding: 20rpx 20rpx;
+  color: white;
+  background-color: green;
+  text-align: center;
+  font-weight: 700;
+  border-radius: 10rpx;
+  margin-top: 20rpx
+}
+
+.me .login .top {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 60rpx
+}
+.me .login .top .left{
+  display: flex
+}
+.me .login .top .left .portrait{
+  width: 80rpx;
+  height: 80rpx
+}
+.me .login .top .left .portrait image{
+  width: 100%;
+  height: 100%;
+  border-radius: 50%
+}
+.me .login .top .left .msg{
+  padding: 6rpx;
+  margin-left: 40rpx
+}
+.me .login .top .left .msg .nickname{
+  font-size: 36rpx
+}
+.me .login .top .left .msg .level{
+  font-size: 30rpx
+}
+.me .login .top .signIn{
+  line-height: 40rpx
+}
+.me .login .top .signIn .text{
+  color: white;
+  background-color: #aaa;
+  height: 40rpx;
+  padding: 6rpx 12rpx;
+  border-radius: 4rpx
+}
+.me .login .state{
+  display: flex;
+  justify-content: space-around;
+  margin-top: 40rpx
+}
+.me .login .state .dynamic{
+  text-align: center
+}
+.me .login .state .dynamic .count{
+  font-size: 30rpx
+}
+.me .login .state .dynamic .name{
+  font-size: 30rpx;
+  color: #666
+}
+.me .login .state .focus{
+  text-align: center
+}
+.me .login .state .focus .count{
+  font-size: 30rpx
+}
+.me .login .state .focus .name{
+  font-size: 30rpx;
+  color: #666
+}
+.me .login .state .fans{
+  text-align: center
+}
+.me .login .state .fans .count{
+  font-size: 30rpx
+}
+.me .login .state .fans .name{
+  font-size: 30rpx;
+  color: #666
+}
+.me .login .state .edit{
+  text-align: center
+}
+.me .login .state .edit .edit-icon{
+  width: 30rpx;
+  height: 37rpx;
+  margin: 0 auto
+}
+.me .login .state .edit .edit-icon image{
+  width: 100%;
+  height: 100%
+}
+.me .login .state .edit .name{
+  font-size: 30rpx;
+  color: #666
+}
+.me .login .quit{
+  position: fixed;
+  left: 50%;
+  bottom: 200rpx;
+  transform: translateX(-50%)
+}
+.me .login .quit .btn{
+  text-align: center;
+  width: 200rpx;
+  color: white;
+  padding: 20rpx 40rpx;
+  background-color: coral;
+  border-radius: 20rpx
+}

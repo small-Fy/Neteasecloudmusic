@@ -1,0 +1,72 @@
+<view class="navigationBar">
+    <view class="back" bindtap="back">
+      <van-icon name="arrow-left" size="60rpx" />
+    </view>
+    <view class="msg">
+      <view class="text">{{musicDetails[0].name}}</view>
+      <view class="copywriter">{{musicDetails[0].ar[0].name}}</view>
+    </view>
+  </view>
+
+<view class="backgroundImg">
+  <image src="{{musicDetails[0].al.picUrl}}"></image>
+</view>
+
+
+
+<view class="disc">
+  <view class="pic {{playFlag?'':'stop'}}">
+    <image src="{{musicDetails[0].al.picUrl}}"></image>
+  </view>
+</view>
+
+<view class="bottom">
+  <view class="icons">
+    <view class="love">
+      <image src="../../images/love.png"></image>
+    </view>
+    <view class="download">
+      <image src="../../images/download.png"></image>
+    </view>
+    <view class="flowers">
+      <image src="../../images/flowers.png"></image>
+    </view>
+    <view class="news">
+      <image src="../../images/comment.png"></image>
+    </view>
+    <view class="share">
+      <image src="../../images/menu-white.png"></image>
+    </view>
+  </view>
+
+  <view class="playBar">
+    <view class="process">
+      <van-slider value="{{percentage}}" bar-height="2px" active-color="#c20c0c" bind:change="fastForward"/>
+    </view>
+  </view>
+  <view class="operation">
+    <view class="cycle" bindtap="changeModel">
+      <image src="{{cycleStyle[cycleIndex]}}"></image>
+    </view>
+    <view class="lastSong" bindtap="lastSong">
+      <image src="../../images/lastSong.png"></image>
+    </view>
+    <view class="play">
+      <image src="../../images/play-white.png" wx:if="{{!playFlag}}" bindtap="audioPlay"></image>
+      <image src="../../images/pause-white.png" wx:if="{{playFlag}}" bindtap="audioPause"></image>
+    </view>
+    <view class="nextSong" bindtap="nextSong">
+      <image src="../../images/nextSong.png"></image>
+    </view>
+    <view class="share" bindtap="showDiscMsg">
+      <image src="../../images/menu-play.png"></image>
+    </view>
+  </view>
+
+  <view class="currentTime">{{currentTime}}</view>
+  <view class="totalTime">{{totalTime}}</view>
+</view>
+
+<van-popup show="{{ discMsg }}" bind:close="closeDiscMsg" custom-style="height: 60%;" position="bottom" round="{{true}}">
+<discMsg bind:getSonId="getSonId"></discMsg>
+</van-popup>

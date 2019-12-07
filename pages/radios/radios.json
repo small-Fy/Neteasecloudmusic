@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "van-icon": "../../lib/vant/icon/index",
+    "van-tag": "../../lib/vant/tag/index"
+  },
+  "navigationBarTitleText": "电台"
+}

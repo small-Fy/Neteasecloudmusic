@@ -1,0 +1,22 @@
+<view class="bottom">
+  <view class="left">
+    <view class="poster">
+      <image src="{{musicDetail.poster}}"></image>
+    </view>
+    <view class="music">
+      <view class="name">{{musicDetail.musicName}}</view>
+      <view class="author">{{musicDetail.singerName}}</view>
+    </view>
+  </view>
+  <view class="right">
+    <view class="play" bindtap="audioPlay" wx:if="{{!startFlag}}">
+      <image src="../../images/music-play.png"></image>
+    </view>
+    <view class="pause" bindtap="audioPause" wx:if="{{startFlag}}">
+      <image src="../../images/pause.png"></image>
+    </view>
+    <view class="menu">
+      <image src="../../images/menu-bottom.png"></image>
+    </view>
+  </view>
+</view>

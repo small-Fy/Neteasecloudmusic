@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "van-icon": "../../lib/vant/icon/index",
+    "musicList": "../../components/musicList/musicList"
+  },
+  "navigationBarTitleText": "专辑"
+}

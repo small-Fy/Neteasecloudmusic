@@ -1,0 +1,95 @@
+<view class="searchInner">
+  <view class="top">
+    <view class="left">
+      <view class="icon-left">
+      </view>
+      <view class="search">
+        <input type="text" placeholder="{{defaultWord}}" value="{{keyWord}}" bindinput="wordInput" bindconfirm="wordConfirm"></input>
+      </view>
+    </view> 
+    <view class="icon-right">
+      <image src="../../../images/headPortrait.png"></image>
+    </view>
+  </view>
+
+  <view class="searchLast" wx:if="{{!searchFlag}}">
+    <view class="banner">
+      <image src="{{banners[0].pic}}"></image>
+    </view>
+
+    <view class="searchHistory" wx:if="{{searchHistory.length>0}}">
+      <view class="head">
+        <view class="text">历史记录</view>
+        <view class="icon">
+          <van-icon name="delete" color="#666" size="45rpx" bindtap="deleteHistory" />
+        </view>
+      </view>
+      <scroll-view class="historyList" scroll-x="true">
+        <view class="historyItem" wx:for="{{searchHistory}}" wx:key="{{index}}" bindtap="clickHistory" data-item="{{item}}">{{item}}</view>
+      </scroll-view>
+    </view>
+
+    <view class="title">热搜榜</view>
+    <view class="hotSearch">
+      <view class="searchItem" wx:for="{{hotSearch}}" wx:key="{{index}}" bindtap="hotSearch" data-keyword="{{item.searchWord}}">
+        <view class="left">
+          <view class="index {{index<3?'font':''}}">{{index+1}}</view>
+          <view class="msg">
+            <view class="up">
+              <view class="searchWord {{index<3?'fontup':''}}">{{item.searchWord}}</view>
+              <view class="hot" wx:if="{{item.iconType===1}}">HOT</view>
+              <view class="up_red" wx:if="{{item.iconType===5}}">
+                <image src="../../../images/up-red.png"></image>
+              </view>
+              <view class="new" wx:if="{{item.iconType===2}}">NEW</view>
+            </view>
+            <view class="bottom">{{item.content}}</view>
+          </view>
+        </view>
+        <view class="right">{{item.score}}</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="searchNext" wx:if="{{searchFlag}}">
+    <view class="tabs">
+      <van-tabs active="{{ active }}" color='#c20c0c'>
+        <van-tab title="综合">
+          <scroll-view scroll-y="true" style="height: 1020rpx;">
+            <comprehensive keyWord="{{keyWord}}"></comprehensive>
+          </scroll-view>
+        </van-tab>
+        <van-tab title="单曲">
+          <single keyWord="{{keyWord}}"></single>
+        </van-tab>
+        <van-tab title="云村"></van-tab>
+        <van-tab title="视频">
+          <vedio keyWord="{{keyWord}}"></vedio>
+        </van-tab>
+        <van-tab title="歌手">
+          <artist keyWord="{{keyWord}}"></artist>
+        </van-tab>
+        <van-tab title="专辑">
+          <album keyWord="{{keyWord}}"></album>
+        </van-tab>
+        <van-tab title="歌单">
+          <playList keyWord="{{keyWord}}"></playList>
+        </van-tab>
+        <van-tab title="主播电台">
+          <djRadio keyWord="{{keyWord}}"></djRadio>
+        </van-tab>
+        <van-tab title="用户">
+          <user keyWord="{{keyWord}}"></user>
+        </van-tab>
+      </van-tabs>
+    </view>
+  </view>
+</view>
+
+
+<van-popup show="{{ searchShow }}" custom-style="height: 60%;width:90%;margin-top:100rpx;backgroud-color:#eee" position="top" bind:click-overlay="closePop" overlay-style="opacity:0.3">
+  <view class="textTop">搜索"{{keyWord}}"</view>
+  <view class="item" wx:for="{{allMatch}}" wx:key="{{index}}" bindtap="toSearchDetail" data-keyword="{{item.keyword}}">
+    <van-search value="{{item.keyword}}" disabled/>
+  </view>
+</van-popup>

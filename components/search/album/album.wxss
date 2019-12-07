@@ -1,0 +1,57 @@
+.inner{
+  padding: 0 20rpx
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  padding: 20rpx 0;
+}
+
+.item .left {
+  margin-right: 20rpx;
+  position: relative;
+}
+
+.item .left .coverUrl {
+  width: 150rpx;
+  height: 150rpx;
+}
+
+.item .left .coverUrl image {
+  width: 100%;
+  height: 100%;
+  border-radius: 10rpx;
+}
+
+.item .right {
+  padding: 20rpx 0;
+}
+
+.item .right .msg {
+  font-size: 32rpx;
+  width: 450rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.item .right .bottom {
+  display: flex;
+  margin-top: 10rpx;
+}
+
+.item .right .bottom .durationms {
+  color: #666;
+  font-size: 28rpx;
+  margin-right: 10rpx;
+}
+
+.item .right .bottom .userName {
+  color: #666;
+  font-size: 28rpx;
+  width: 350rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

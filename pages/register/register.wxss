@@ -1,0 +1,46 @@
+.register{
+  padding: 40rpx 20rpx 0 20rpx;
+  position: relative
+}
+.register .btn{
+  position: absolute;
+  z-index: 10;
+  font-size:24rpx;
+  color: white;
+  background-color: green;
+  width: 120rpx;
+  border-radius: 16rpx;
+  padding: 20rpx;
+  right: 20rpx;
+  top: 200rpx;
+  text-align: center
+}
+
+.register .bottom {
+  display: flex;
+  justify-content: space-around;
+}
+
+.register .bottom .login {
+  width: 200rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  background-color: #c20c0c;
+  border-radius: 20rpx;
+  position: fixed;
+  bottom: 180rpx;
+  left: 80rpx;
+}
+
+.register .bottom .registered {
+  width: 200rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  background-color: coral;
+  border-radius: 20rpx;
+  position: fixed;
+  bottom: 180rpx;
+  right: 80rpx;
+}

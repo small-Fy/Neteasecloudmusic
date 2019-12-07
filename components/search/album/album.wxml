@@ -1,0 +1,18 @@
+<scroll-view scroll-y="true" style="height: 1020rpx;" bindscrolltolower="toBottom">
+  <view class="inner">
+    <view class="item" wx:for="{{searchMsg}}" wx:key="{{index}}">
+      <view class="left">
+        <view class="coverUrl">
+          <image src="{{item.picUrl}}"></image>
+        </view>
+      </view>
+      <view class="right">
+        <text class="msg">{{item.name}}</text>
+        <view class="bottom">
+          <view class="durationms">{{item.artist.name}}</view>
+          <text class="userName">{{item.publishTime}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</scroll-view>

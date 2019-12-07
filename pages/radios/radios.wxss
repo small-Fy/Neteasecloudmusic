@@ -1,0 +1,300 @@
+@import '../../lib/wxParse/wxParse.wxss';
+
+.backgroundImg {
+  width: 100%;
+  height: 650rpx;
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.backgroundImg image {
+  width: 100%;
+  height: 100%;
+}
+
+.mains{
+  position: absolute;
+  top: 400rpx;
+  left: 0;
+  right: 0;
+  padding: 0 40rpx;
+  display: flex;
+  justify-content: space-between
+}
+
+.mains .left .djName{
+  font-weight: 700;
+  color: white
+}
+
+.mains .left .subCount{
+  font-size: 30rpx;
+  color: #777
+}
+
+.mains .right{
+  color: white;
+  background-color: #c20c0c;
+  padding: 0 20rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  border-radius: 20rpx
+}
+
+.mains .right van-icon{
+  margin-right: 20rpx
+}
+
+.content{
+  width: 100%;
+  background-color: white;
+  margin-top: 500rpx;
+  border-radius: 50rpx 50rpx 0 0;
+}
+
+.top {
+  display: flex;
+  justify-content: space-around;
+  font-size: 40rpx;
+  font-weight: 700;
+  padding-top: 20rpx;
+}
+
+.top .detail {
+  padding-bottom: 20rpx;
+}
+
+.top .project {
+  padding-bottom: 20rpx;
+}
+
+.top  .font {
+  color: #c20c0c;
+  border-bottom: 4rpx solid #c20c0c;
+}
+
+.inner {
+  padding: 0 30rpx 0 30rpx;
+}
+
+.inner .details .title {
+  font-size: 36rpx;
+  font-weight: 700
+}
+
+.inner .details .dj {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 40rpx 0;
+}
+
+.inner .details .dj .left {
+  display: flex;
+}
+
+.inner .details .dj .right {
+  display: flex;
+}
+
+.inner .details .dj .left .avatarImg {
+  width: 100rpx;
+  height: 100rpx;
+}
+
+.inner .details .dj .left .avatarImg image {
+  width: 100%;
+  height: 100%;
+}
+
+.inner .details .dj .left .avater {
+  margin-left: 20rpx;
+  width: 400rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.inner .details .dj .left .avater .nickname {
+  font-size: 36rpx;
+}
+
+.inner .details .dj .left .avater .description {
+  font-size: 30rpx;
+  color: #333;
+}
+
+.inner .category {
+  margin: 20rpx 0 10rpx 0
+}
+
+.inner .category .tag{
+  margin-left: 10rpx;
+}
+
+.inner .WxEmojiView{
+  margin-bottom: 40rpx;
+  color: #111;
+  line-height: 50rpx
+}
+
+.inner .wxParse-inline{
+  display: block
+}
+
+
+.inner .item{
+  padding: 10rpx
+}
+
+.inner .item{
+  padding: 10rpx;
+  display: flex
+}
+
+.inner .item .avatarImg{
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50rpx
+}
+
+.inner .item .avatarImg image{
+  width: 100%;
+  height: 100%
+}
+
+.inner .item .userProfile{
+  margin-left: 20rpx;
+  width: 65%
+}
+
+.inner .item .userProfile .nickname{
+  color: #666;
+  line-height: 80rpx;
+}
+
+.inner .item .userProfile .content{
+  margin-top: 10rpx
+}
+
+.inner .item .userProfile .programName{
+  color: #666;
+  margin-top: 20rpx
+}
+
+.inner .programs .top{
+  display: flex;
+  justify-content: space-between
+}
+
+.inner .programs .top .left{
+  font-weight: 700;
+  font-size: 32rpx
+}
+
+.inner .programs .top .right{
+  display: flex
+}
+
+.inner .programs .top .right .sorting{
+  margin-right: 50rpx;
+  display: flex;
+  font-size: 32rpx
+}
+
+.inner .programs .top .right .sorting .icon{
+  margin-right: 10rpx;
+}
+
+.inner .programs .top .right .choose{
+  display: flex;
+  font-size: 32rpx
+}
+
+.inner .programs .top .right .choose .icon{
+  margin-right: 10rpx;
+}
+
+.inner .programs .program {
+  padding: 20rpx 40rpx 20rpx 0;
+}
+
+.inner .programs .program .conditions{
+  display: flex;
+  justify-content: space-between;
+}
+
+
+.inner .programs .program .left{
+  display: flex;
+  align-items: center
+}
+
+.inner .programs .program .left .index{
+  color: #666;
+  line-height: 84rpx;
+  width: 84rpx;
+  text-align: center
+}
+
+.inner .programs .program .left .icon{
+  width: 40rpx;
+  height: 40rpx;
+  margin: 0 22rpx
+}
+
+.inner .programs .program .left .icon image{
+  width: 100%;
+  height: 100%
+}
+
+
+.inner .programs .program .left .music .name{
+  font-size: 34rpx;
+  width: 300rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis
+}
+
+.inner .programs .program .left .music .tags{
+  display: flex;
+  font-size: 28rpx;
+  align-items: center;
+  margin-top: 10rpx
+}
+
+.inner .programs .program .left .music .tags .createTime{
+  width: 120rpx
+}
+
+.inner .programs .program .left .music .tags .listenerCount{
+  margin: 0 40rpx;
+  width: 120rpx
+}
+
+.inner .programs .program .left .music .tags  .icons{
+  margin-right: 12rpx;
+  margin-top: 6rpx
+}
+
+
+.inner .programs .program .left .music .tags .duration{
+  width: 120rpx
+}
+
+.inner .programs .program .right{
+  display: flex;
+  align-items: center;
+  width: 50rpx;
+  height: 50rpx
+}
+
+.inner .programs .program .right  image{
+  width: 100%;
+  height: 100%;
+}

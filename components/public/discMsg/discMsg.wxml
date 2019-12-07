@@ -1,0 +1,39 @@
+<view class="discMsg">
+  <view class="top">
+    <view class="left">
+      <view class="cycle-icon" bindtap="changeModel">
+        <image src="{{cycleStyle[cycleIndex].path}}"></image>
+      </view>
+      <view class="cycle-text">{{cycleStyle[cycleIndex].text}}({{playlist.tracks.length}})</view>
+    </view>
+    <view class="right">
+      <view class="collection">
+        <image src="../../../images/collection.png"></image>
+      </view>
+      <view class="text">收藏全部</view>
+      <view class="empty">
+        <image src="../../../images/empty.png"></image>
+      </view>
+    </view>
+  </view>
+
+  <view class="inner">
+    <view class="item" wx:for="{{playlist.tracks}}" wx:key="{{index}}" bindtap="chooseItem" data-index="{{index}}" data-id="{{item.id}}">
+      <view class="left {{clickItem===index?'font':''}}">
+        <view class="icon" wx:if="{{clickItem===index}}">
+          <image src="../../../images/horn.png"></image>
+        </view>
+        <view class="bigSize">{{item.name}}</view>
+        <view class="smallSize {{clickItem===index?'font':''}}">-{{item.ar[0].name}}</view>
+      </view>
+      <view class="right">
+        <view class="tag" wx:if="{{clickItem===index}}">
+          <van-tag plain text-color="black">播放来源</van-tag>
+        </view>
+        <view class="icon">
+          <image src="../../../images/cuo.png"></image>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

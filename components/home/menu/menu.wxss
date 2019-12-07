@@ -1,0 +1,24 @@
+.menu{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40rpx
+}
+.menu .item{
+  text-align: center
+}
+.menu .item .img{
+  margin: 0 auto;
+  width: 54rpx;
+  height: 54rpx;
+  border-radius: 50%;
+  padding: 16rpx;
+  background-color: #C20C0C
+}
+.menu .item .img image{
+  width: 100%;
+  height: 100%
+}
+.menu .item .name{
+  height: 50rpx;
+  line-height: 50rpx
+}

@@ -1,0 +1,64 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/singer/singer",
+    "pages/me/me",
+    "pages/login/login",
+    "pages/register/register",
+    "pages/userMsg/userMsg",
+    "pages/musicDetail/musicDetail",
+    "pages/musicPlay/musicPlay",
+    "pages/singerDetail/singerDetail",
+    "pages/discDetail/discDetail",
+    "pages/miscDetail/miscDetail",
+    "pages/radios/radios",
+    "pages/searchDetail/searchDetail"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#C20C0C",
+    "navigationBarTitleText": "网易云音乐",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "selectedColor": "#C20C0C",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "images/home_now.png",
+        "selectedIconPath": "images/home_pass.png"
+      },
+      {
+        "pagePath": "pages/singer/singer",
+        "text": "歌手",
+        "iconPath": "images/singer_now.png",
+        "selectedIconPath": "images/singer_pass.png"
+      },
+      {
+        "pagePath": "pages/me/me",
+        "text": "我的",
+        "iconPath": "images/me_now.png",
+        "selectedIconPath": "images/me_pass.png"
+      }
+    ]
+  },
+  "usingComponents": {
+    "van-button": "lib/vant/button/index",
+    "van-search":"lib/vant/search/index",
+    "van-grid": "lib/vant/grid/index",
+    "van-grid-item": "lib/vant/grid-item/index",
+    "van-tab": "lib/vant/tab/index",
+    "van-tabs": "lib/vant/tabs/index",
+    "van-field": "lib/vant/field/index",
+    "van-collapse": "lib/vant/collapse/index",
+    "van-collapse-item": "lib/vant/collapse-item/index",
+    "van-popup": "lib/vant/popup/index",
+    "van-sticky": "lib/vant/sticky/index"
+  },
+  "requiredBackgroundModes": [
+    "audio"
+  ],
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

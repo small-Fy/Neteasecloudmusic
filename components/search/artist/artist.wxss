@@ -1,0 +1,39 @@
+.inner{
+  padding: 0 20rpx
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  padding: 20rpx 0;
+}
+
+.item .left {
+  display: flex;
+  align-items: center;
+}
+
+.item .left .img {
+  width: 150rpx;
+  height: 150rpx;
+}
+
+.item .left .img image {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.item .left .singer {
+  display: flex;
+  margin-left: 40rpx;
+}
+
+.item .left .singer .name {
+  font-size: 32rpx;
+}
+
+.item .left .singer .name .alia {
+  font-size: 32rpx;
+  color: #999;
+}

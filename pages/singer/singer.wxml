@@ -1,0 +1,21 @@
+<view class="singer">
+  <scroll-view scroll-x="true" class="category">
+    <view wx:for="{{singerCategory}}" wx:key="{{index}}" class="items">
+      <view class="item {{categoryFlag===index?'font':''}}" data-index="{{index}}" bindtap="chooseCategory">{{item.category}}</view>
+    </view>
+  </scroll-view>
+  <scroll-view scroll-x="true" class="letter" wx:if="{{categoryFlag!==0}}">
+    <view wx:for="{{letter}}" wx:key="{{index}}" class="items">
+      <view class="item {{letterFlag===index?'font':''}}" data-index="{{index}}" bindtap="chooseLetter">{{item}}</view>
+    </view>
+  </scroll-view>
+
+  <scroll-view class="singerMsg" scroll-y="true" enable-back-to-top="true" bindscrolltolower="lower">
+    <view class="item" wx:for="{{artists}}" wx:key="{{index}}" bindtap="toSingerDetail" data-id="{{item.id}}" data-name='{{item.name}}' data-picUrl="{{item.picUrl}}" data-accountId="{{item.accountId}}">
+      <view class="headPortrait">
+        <image src="{{item.picUrl}}"></image>
+      </view>
+      <view class="name">{{item.name}}</view>
+    </view>
+  </scroll-view>
+</view>

@@ -1,0 +1,16 @@
+<!-- <van-grid column-num="5">
+  <van-grid-item icon="../../../images/everyday.png" text="每日推荐" />
+  <van-grid-item icon="../../../images/songlist.png" text="歌单" />
+  <van-grid-item icon="../../../images/ranking.png" text="排行榜" />
+  <van-grid-item icon="../../../images/radio.png" text="电台" />
+  <van-grid-item icon="../../../images/live.png" text="直播" />
+</van-grid> -->
+
+<view class="menu">
+  <view class="item" wx:for="{{images}}" wx:key="{{index}}">
+    <view class="img">
+      <image src="{{item.path}}"></image>
+    </view>
+    <view class="name">{{item.name}}</view>
+  </view>
+</view>

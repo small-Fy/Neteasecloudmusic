@@ -1,0 +1,14 @@
+{
+  "component": true,
+  "usingComponents": {
+    "van-icon": "../../lib/vant/icon/index",
+    "comprehensive": "../../search/comprehensive/comprehensive",
+    "single": "../../search/single/single",
+    "vedio": "../../search/vedio/vedio",
+    "artist": "../../search/artist/artist",
+    "album": "../../search/album/album",
+    "playList": "../../search/playList/playList",
+    "djRadio": "../../search/djRadio/djRadio",
+    "user": "../../search/user/user"
+  }
+}

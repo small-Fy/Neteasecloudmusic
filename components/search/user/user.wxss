@@ -1,0 +1,52 @@
+.inner{
+  padding: 0 20rpx
+}
+.item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20rpx 0;
+}
+
+.item .left {
+  display: flex;
+  align-items: center;
+}
+
+.item .left .img {
+  width: 150rpx;
+  height: 150rpx;
+}
+
+.item .left .img image {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.item .left .singer {
+  display: flex;
+  margin-left: 40rpx;
+}
+
+.item .left .singer .name {
+  font-size: 32rpx;
+}
+
+.item .left .singer .gender {
+  width: 20rpx;
+  height: 20rpx;
+}
+
+.item .left .singer .gender image {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.item .right .text {
+  padding: 10rpx 24rpx;
+  border-radius: 39rpx;
+  border: 2rpx solid #c20c0c;
+  color: #c20c0c
+}

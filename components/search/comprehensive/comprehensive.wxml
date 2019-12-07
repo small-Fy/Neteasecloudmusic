@@ -1,0 +1,207 @@
+<view class="comprehensive">
+  <view class="single">
+    <view class="top">
+      <view class="left">单曲</view>
+      <view class="right">
+        <view class="icon">
+          <van-icon name="play-circle-o" />
+        </view>
+        <view class="text">播放全部</view>
+      </view>
+    </view>
+    <view class="inner">
+      <view class="item" wx:for="{{searchMsg.song.songs}}" wx:key="{{index}}">
+        <view class="left">
+          <view class="songName">
+            <view class="name">{{item.name}}</view>
+            <view class="original" wx:if="{{item.alia}}">{{item.alia[0]}}</view>
+          </view>
+          <view class="center">
+            <view class="tag">SQ</view>
+            <view class="singerName">{{item.ar[0].name}}-{{item.al.name}}</view>
+          </view>
+          <view class="alia" wx:if="{{item.alia}}">{{item.alia[0]}}</view>
+        </view>
+        <view class="right">
+          <view class="playImg">
+            <image src="../../../images/play-item.png"></image>
+          </view>
+          <view class="menuImg">
+            <image src="../../../images/menu.png"></image>
+          </view>
+        </view>
+      </view>
+      <view class="moreText" wx:if="{{searchMsg.song.more}}">{{searchMsg.song.moreText}}></view>
+    </view>
+  </view>
+
+  <view class="video">
+    <view class="title">视频</view>
+    <view class="item" wx:for="{{searchMsg.video.videos}}" wx:key="{{index}}">
+      <view class="left">
+        <view class="coverUrl">
+          <image src="{{item.coverUrl}}"></image>
+        </view>
+        <view class="playCount">
+          <view class="img">
+            <image src="../../../images/play.png"></image>
+          </view>
+          <view>{{item.playTime}}</view>
+        </view>
+      </view>
+      <view class="right">
+        <view class="msg">{{item.title}}</view>
+        <view class="bottom">
+          <view class="durationms">{{item.durationms}}</view>
+          <text class="userName">by\t{{item.creator[0].userName}}</text>
+        </view>
+      </view>
+    </view>
+    <view class="moreText" wx:if="{{searchMsg.video.more}}">{{searchMsg.video.moreText}}></view>
+  </view>
+
+  <view class="playList">
+    <view class="title">歌单</view>
+    <view class="item" wx:for="{{searchMsg.playList.playLists}}" wx:key="{{index}}">
+      <view class="left">
+        <view class="coverUrl">
+          <image src="{{item.coverImgUrl}}"></image>
+        </view>
+      </view>
+      <view class="right">
+        <view class="msg">{{item.name}}</view>
+        <view class="bottom">
+          <view class="durationms">{{item.trackCount}}首</view>
+          <text class="userName">by\t{{item.creator.nickname}},播放{{item.playCount}}次</text>
+        </view>
+      </view>
+    </view>
+    <view class="moreText" wx:if="{{searchMsg.playList.more}}">{{searchMsg.playList.moreText}}></view>
+  </view>
+
+  <view class="relevantSearch">
+    <view class="title">相关搜索</view>
+    <view class="sim_querys">
+      <view class="item" wx:for="{{searchMsg.sim_query.sim_querys}}" wx:key="{{index}}">{{item.keyword}}</view>
+    </view>
+  </view>
+
+  <view class="Mlog">
+    <view class="title">Mlog</view>
+    <view class="mlogs">
+      <view class="item" wx:for="{{searchMsg.mlog.mlogs}}" wx:key="{{index}}">
+        <view class="coverUrl">
+          <image src="{{item.resource.mlogBaseData.coverUrl}}"></image>
+          <view class="name">{{item.matchFieldContent}}</view>
+          <view class="icon">
+            <van-icon name="play-circle-o" />
+          </view>
+        </view>
+        <view class="text">{{item.resource.mlogBaseData.text}}</view>
+        <view class="bottom">
+          <view class="left">
+            <view class="avatarUrl">
+              <image src="{{item.resource.userProfile.avatarUrl}}"></image>
+            </view>
+            <view class="nickname">{{item.resource.userProfile.nickname}}</view>
+          </view>
+          <view class="right">{{item.resource.mlogExtVO.likedCount}}赞</view>
+        </view>
+      </view>
+    </view>
+    <view class="moreText" wx:if="{{searchMsg.mlog.more}}">{{searchMsg.mlog.moreText}}></view>
+  </view>
+
+  <view class="talk">
+    <view class="title">主题</view>
+    <view class="item" wx:for="{{searchMsg.talk.talks}}" wx:key="{{index}}">
+      <view class="left">
+        <view class="coverUrl">
+          <image src="{{item.showCover.url}}"></image>
+        </view>
+      </view>
+      <view class="right">
+        <text class="msg">#\t{{item.talkName}}</text>
+        <view class="bottom">
+          <view class="durationms">{{item.follows}}人关注</view>
+          <text class="userName">{{item.participations}}人参与</text>
+        </view>
+      </view>
+    </view>
+    <view class="moreText" wx:if="{{searchMsg.talk.more}}">{{searchMsg.talk.moreText}}></view>
+  </view>
+
+  <view class="artist">
+    <view class="title">歌手</view>
+    <view class="item" wx:for="{{searchMsg.artist.artists}}" wx:key="{{index}}">
+      <view class="left">
+        <view class="img">
+          <image src="{{item.picUrl}}"></image>
+        </view>
+        <view class="singer">
+          <view class="name">{{item.name}}</view>
+          <view class="alia" wx:if="{{item.alia}}">({{item.alia[0]}})</view>
+        </view>
+      </view>
+    </view>
+    <view class="moreText" wx:if="{{searchMsg.artist.more}}">{{searchMsg.artist.moreText}}></view>
+  </view>
+
+  <view class="album">
+    <view class="title">专辑</view>
+    <view class="item" wx:for="{{searchMsg.album.albums}}" wx:key="{{index}}">
+      <view class="left">
+        <view class="coverUrl">
+          <image src="{{item.picUrl}}"></image>
+        </view>
+      </view>
+      <view class="right">
+        <text class="msg">{{item.name}}</text>
+        <view class="bottom">
+          <view class="durationms">{{item.artist.name}}</view>
+          <text class="userName">{{item.publishTime}}</text>
+        </view>
+      </view>
+    </view>
+    <view class="moreText" wx:if="{{searchMsg.album.more}}">{{searchMsg.album.moreText}}></view>
+  </view>
+
+  <view class="djRadio">
+    <view class="title">电台</view>
+    <view class="item" wx:for="{{searchMsg.djRadio.djRadios}}" wx:key="{{index}}">
+      <view class="left">
+        <view class="coverUrl">
+          <image src="{{item.picUrl}}"></image>
+        </view>
+      </view>
+      <view class="right">
+        <text class="msg">{{item.name}}</text>
+        <view class="bottom">
+          <text class="userName">{{item.dj.nickname}}</text>
+        </view>
+      </view>
+    </view>
+    <view class="moreText" wx:if="{{searchMsg.djRadio.more}}">{{searchMsg.djRadio.moreText}}></view>
+  </view>
+
+  <view class="user">
+    <view class="title">用户</view>
+    <view class="item" wx:for="{{searchMsg.user.users}}" wx:key="{{index}}">
+      <view class="left">
+        <view class="img">
+          <image src="{{item.avatarUrl}}"></image>
+        </view>
+        <view class="singer">
+          <view class="name">{{item.nickname}}</view>
+          <view class="gender" wx:if="{{item.gender!==0}}">
+            <image src="{{genderList[item.gender]}}"></image>
+          </view>
+        </view>
+      </view>
+      <view class="right">
+        <text class="text">+\t关注</text>
+      </view>
+    </view>
+    <view class="moreText" wx:if="{{searchMsg.artist.more}}">{{searchMsg.artist.moreText}}></view>
+  </view>
+</view>

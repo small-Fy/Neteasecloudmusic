@@ -1,0 +1,54 @@
+<view class="searchInner">
+  <view class="top">
+    <view class="left">
+      <view class="icon-left">
+        <van-icon name="arrow-left" size="40rpx" />
+      </view>
+      <view class="search">
+        <input type="text" placeholder="{{keyWord}}" value="{{keyWord}}" bindinput="wordInput" bindconfirm="wordConfirm"></input>
+      </view>
+    </view>
+    <view class="icon-right">
+      <image src="../../images/headPortrait.png"></image>
+    </view>
+  </view>
+
+  <view class="tabs">
+    <van-tabs active="{{ active }}" color='#c20c0c'>
+      <van-tab title="综合">
+        <scroll-view scroll-y="true" style="height: 1020rpx;">
+          <comprehensive keyWord="{{keyWord}}"></comprehensive>
+        </scroll-view>
+      </van-tab>
+      <van-tab title="单曲">
+        <single keyWord="{{keyWord}}"></single>
+      </van-tab>
+      <van-tab title="云村">内容 1</van-tab>
+      <van-tab title="视频">
+        <vedio keyWord="{{keyWord}}"></vedio>
+      </van-tab>
+      <van-tab title="歌手">
+        <artist keyWord="{{keyWord}}"></artist>
+      </van-tab>
+      <van-tab title="专辑">
+        <album keyWord="{{keyWord}}"></album>
+      </van-tab>
+      <van-tab title="歌单">
+        <playList keyWord="{{keyWord}}"></playList>
+      </van-tab>
+      <van-tab title="主播电台">
+        <djRadio keyWord="{{keyWord}}"></djRadio>
+      </van-tab>
+      <van-tab title="用户">
+        <user keyWord="{{keyWord}}"></user>
+      </van-tab>
+    </van-tabs>
+  </view>
+
+  <!-- <van-popup show="{{ searchShow }}" custom-style="height: 60%;width:90%;margin-top:100rpx;backgroud-color:#eee" position="top" bind:click-overlay="closePop" overlay-style="opacity:0.3">
+  <view class="textTop">搜索"{{keyWord}}"</view>
+  <view class="item" wx:for="{{allMatch}}" wx:key="{{index}}" bindtap="toSearchDetail" data-keyword="{{item.keyword}}">
+    <van-search value="{{item.keyword}}" disabled/>
+  </view>
+</van-popup> -->
+</view>

@@ -1,0 +1,228 @@
+.navigationBar {
+  display: flex;
+  padding: 10rpx 20rpx;
+  height: 80rpx;
+  position: absolute;
+  top: 34rpx;
+}
+
+.navigationBar .back {
+  line-height: 80rpx;
+  margin-top: 15rpx;
+}
+
+.navigationBar .msg {
+  margin-left: 40rpx;
+}
+
+.navigationBar .msg .text {
+  font-size: 36rpx;
+}
+
+.navigationBar .msg .copywriter {
+  font-size: 26rpx;
+  color: #666;
+}
+
+
+.backgroundImg {
+  width: 100%;
+  height: 100%;
+  filter: blur(99px);
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.backgroundImg image {
+  width: 100%;
+  height: 100%;
+}
+
+
+.disc {
+  position: absolute;
+  top: 230rpx;
+  left:0;
+  right: 0;
+  width: 550rpx;
+  height: 550rpx;
+  border-radius: 50%;
+  background-color: black;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.disc .pic {
+  width: 380rpx;
+  height: 380rpx;
+  border-radius: 50%;
+  animation: move 22s linear infinite;
+}
+
+.disc .stop {
+  animation-play-state: paused;
+}
+
+@keyframes move {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.disc .pic image {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.bottom{
+  position: absolute;
+  bottom: 40rpx;
+  left: 0;
+  right: 0
+}
+
+.bottom .currentTime{
+  position: absolute;
+  bottom: 122rpx;
+  left: 20rpx;
+  color: white
+}
+
+.bottom .totalTime{
+  position: absolute;
+  bottom: 122rpx;
+  right: 20rpx;
+  color: white
+}
+
+.icons{
+  display: flex;
+  justify-content: space-around;
+  width: 80%;
+  margin: 0 auto
+}
+
+.icons .love{
+  width: 50rpx;
+  height: 50rpx
+}
+
+.icons .love image{
+  width: 100%;
+  height: 100%
+}
+
+.icons .download{
+  width: 50rpx;
+  height: 50rpx
+}
+
+.icons .download image{
+  width: 100%;
+  height: 100%
+}
+
+.icons .flowers{
+  width: 50rpx;
+  height: 50rpx
+}
+
+.icons .flowers image{
+  width: 100%;
+  height: 100%
+}
+
+.icons .news{
+  width: 50rpx;
+  height: 50rpx
+}
+
+.icons .news image{
+  width: 100%;
+  height: 100%
+}
+
+.icons .share{
+  width: 50rpx;
+  height: 50rpx
+}
+
+.icons .share image{
+  width: 100%;
+  height: 100%
+}
+
+.process{
+  width: 70%;
+  margin: 40rpx auto;
+}
+
+.operation{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 80%;
+  margin: 0 auto
+}
+
+.operation .cycle{
+  width: 50rpx;
+  height: 50rpx
+}
+
+.operation .cycle image{
+  width: 100%;
+  height: 100%
+}
+
+.operation .lastSong{
+  width: 50rpx;
+  height: 50rpx
+}
+
+.operation .lastSong image{
+  width: 100%;
+  height: 100%
+}
+
+.operation .play{
+  width: 100rpx;
+  height: 100rpx
+}
+
+.operation .play image{
+  width: 100%;
+  height: 100%
+}
+
+.operation .nextSong{
+  width: 50rpx;
+  height: 50rpx
+}
+
+.operation .nextSong image{
+  width: 100%;
+  height: 100%
+}
+
+.operation .share{
+  width: 50rpx;
+  height: 50rpx
+}
+
+.operation .share image{
+  width: 100%;
+  height: 100%
+}
+

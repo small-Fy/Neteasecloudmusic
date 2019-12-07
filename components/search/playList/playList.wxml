@@ -1,0 +1,19 @@
+<scroll-view scroll-y="true" style="height: 1020rpx;" bindscrolltolower="toBottom">
+
+  <view class="inner">
+    <view class="item" wx:for="{{searchMsg}}" wx:key="{{index}}">
+    <view class="left">
+      <view class="coverUrl">
+        <image src="{{item.coverImgUrl}}"></image>
+      </view>
+    </view>
+    <view class="right">
+      <view class="msg">{{item.name}}</view>
+      <view class="bottom">
+        <view class="durationms">{{item.trackCount}}首</view>
+        <text class="userName">by\t{{item.creator.nickname}},播放{{item.playCount}}次</text>
+      </view>
+    </view>
+  </view>
+  </view>
+</scroll-view>

@@ -1,0 +1,137 @@
+{
+	"description": "项目配置文件",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true,
+		"coverView": true,
+		"autoAudits": false,
+		"checkInvalidKey": true,
+		"checkSiteMap": true,
+		"uploadWithSourceMap": true,
+		"babelSetting": {
+			"ignore": [],
+			"disablePlugins": [],
+			"outputPath": ""
+		}
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.9.2",
+	"appid": "wxea3e71f138ee51ed",
+	"projectname": "Neteasecloudmusic",
+	"debugOptions": {
+		"hidedInDevtools": []
+	},
+	"isGameTourist": false,
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"gamePlugin": {
+			"current": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": -1,
+			"list": [
+				{
+					"id": -1,
+					"name": "pages/singer/singer",
+					"pathName": "pages/singer/singer",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/me/me",
+					"pathName": "pages/me/me",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/login/login",
+					"pathName": "pages/login/login",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/login/login",
+					"pathName": "pages/login/login",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/register/register",
+					"pathName": "pages/register/register",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 5,
+					"name": "pages/musicDetail/musicDetail",
+					"pathName": "pages/musicDetail/musicDetail",
+					"query": "id= 3060714692&copywriter=编辑推荐：​​​但愿你我，依然相信爱",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/musicPlay/musicPlay",
+					"pathName": "pages/musicPlay/musicPlay",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 7,
+					"name": "pages/radios/radios",
+					"pathName": "pages/radios/radios",
+					"query": "radioId=341609066",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/searchDetail/searchDetail",
+					"pathName": "pages/searchDetail/searchDetail",
+					"query": "keyWord=罗志祥",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/index/index",
+					"pathName": "pages/index/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/searchDetail/searchDetail",
+					"pathName": "pages/searchDetail/searchDetail",
+					"query": "keyWord=修炼爱情",
+					"scene": null
+				}
+			]
+		}
+	}
+}

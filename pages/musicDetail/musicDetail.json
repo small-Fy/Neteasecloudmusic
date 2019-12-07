@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "van-icon": "../../lib/vant/icon/index",
+    "musicList":"../../components/musicList/musicList"
+  },
+  "navigationBarBackgroundColor": "#c20c0c",
+  "navigationStyle": "custom"
+}

@@ -1,0 +1,115 @@
+<view class="musicDetail">
+  <view class="navigationBar">
+    <view class="back" bindtap="back">
+      <van-icon name="arrow-left" size="60rpx" />
+    </view>
+    <view class="msg">
+      <view class="text">歌单</view>
+      <view class="copywriter">{{copywriter}}</view>
+    </view>
+  </view>
+
+  <view class="introduce">
+    <view class="backgroundImg">
+      <image src="{{playlist.creator.backgroundUrl}}"></image>
+    </view>
+    <view class="left">
+      <image src="{{playlist.coverImgUrl}}"></image>
+    </view>
+    <view class="right">
+      <view class="name">{{playlist.name}}</view>
+      <view class="creator">
+        <view class="avatarUrl">
+          <image src="{{playlist.creator.avatarUrl}}"></image>
+        </view>
+        <view class="nickname">{{playlist.creator.nickname}}</view>
+        <van-icon name="arrow" color='white' />
+      </view>
+      <view class="description">{{playlist.description}}</view>
+      <view class="icon">
+        <van-icon name="arrow" color='#d8d5d5' />
+      </view>
+    </view>
+    <view class="playCount">
+      <view class="img">
+        <image src="../../images/play.png"></image>
+      </view>
+      <view>{{playCount}}</view>
+    </view>
+  </view>
+
+  <view class="classify">
+    <view class="comments">
+      <view class="icon">
+        <image src="../../images/comment.png"></image>
+      </view>
+      <view class="text">{{playlist.commentCount}}</view>
+    </view>
+    <view class="share">
+      <view class="icon">
+        <image src="../../images/share.png"></image>
+      </view>
+      <view class="text">{{playlist.shareCount}}</view>
+    </view>
+    <view class="download">
+      <view class="icon">
+        <image src="../../images/download.png"></image>
+      </view>
+      <view class="text">下载</view>
+    </view>
+    <view class="multi-select">
+      <view class="icon">
+        <image src="../../images/choose.png"></image>
+      </view>
+      <view class="text">多选</view>
+    </view>
+  </view>
+</view>
+
+
+<view class="inner">
+  <view class="top">
+    <view class="left">
+      <view class="icon">
+        <image src="../../images/music-play.png"></image>
+      </view>
+      <view class="play">
+        <view class="bigSize">播放全部</view>
+        <view class="smallSize">(共{{playlist.trackCount}}首)</view>
+      </view>
+    </view>
+    <view class="right">
+      <view class="icon">
+        <van-icon name="plus" color="white" />
+      </view>
+      <view class="text">收藏({{trackCount}})</view>
+    </view>
+  </view>
+
+  <view class="playList">
+    <view class="item" wx:for="{{playlist.tracks}}" wx:key="{{index}}" bindtap="playMusic" data-item="{{item}}" data-index="{{index}}">
+      <view class="conditions {{clickItem===index?'font':''}}">
+        <view class="left">
+          <view class="index" wx:if="{{clickItem!==index}}">{{index+1}}</view>
+          <view class="icon" wx:if="{{clickItem===index}}">
+            <image src="../../images/horn.png"></image>
+          </view>
+          <view class="music">
+            <view class="name">{{item.name}}</view>
+            <view class="album">{{item.ar[0].name}}-{{item.al.name}}</view>
+          </view>
+        </view>
+        <view class="right">
+          <view class="play-item">
+            <image src="../../images/play-item.png"></image>
+          </view>
+          <view class="menu">
+            <image src="../../images/menu.png"></image>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<musicList class="bottom" wx:if="{{bottomFlag}}" name="{{name}}" author="{{author}}" poster="{{poster}}" backgroundAudio="{{backgroundAudio}}" startFlag="{{startFlag}}" src="{{src}}"></musicList>

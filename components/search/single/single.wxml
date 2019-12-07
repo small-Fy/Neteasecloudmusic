@@ -1,0 +1,42 @@
+<scroll-view scroll-y="true" style="height: 1020rpx;" bindscrolltolower="toBottom">
+  <view class="single">
+    <view class="inner">
+      <view class="top">
+        <view class="left">
+          <view class="icon">
+            <van-icon name="play-circle-o" size="50rpx"/>
+          </view>
+          <view class="text">播放全部</view>
+        </view>
+        <view class="right">
+          <view class="icon">
+            <van-icon name="bars"  size="40rpx"/>
+          </view>
+          <view class="text">多选</view>
+        </view>
+      </view>
+      <view class="item" wx:for="{{searchMsg}}" wx:key="{{index}}">
+        <view class="left">
+          <view class="songName">
+            <view class="name">{{item.name}}</view>
+            <view class="original" wx:if="{{item.alia}}">{{item.alia[0]}}</view>
+          </view>
+          <view class="center">
+            <view class="tag">SQ</view>
+            <view class="singerName">{{item.artists[0].name}}-{{item.album.name}}</view>
+          </view>
+          <view class="alia" wx:if="{{item.alia}}">{{item.alia[0]}}</view>
+        </view>
+        <view class="right">
+          <view class="playImg">
+            <image src="../../../images/play-item.png"></image>
+          </view>
+          <view class="menuImg">
+            <image src="../../../images/menu.png"></image>
+          </view>
+        </view>
+      </view>
+      <view class="moreText" wx:if="{{searchMsg.song.more}}">{{searchMsg.song.moreText}}></view>
+    </view>
+  </view>
+</scroll-view>

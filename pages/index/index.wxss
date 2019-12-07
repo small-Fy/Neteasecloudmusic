@@ -1,0 +1,26 @@
+.home{
+  padding: 0 18rpx
+}
+
+.search{
+  padding: 20rpx 0;
+  display: flex;
+  justify-content: space-between
+}
+.search .musicPavilion{
+  width: 140rpx;
+  line-height: 108rpx;
+  font-size: 34rpx
+}
+.search .search-body .van-search{
+  padding: 10px 0;
+}
+.search .music-icon{
+  width: 50rpx;
+  height: 50rpx;
+  line-height: 108rpx
+}
+.search .music-icon image{
+  width: 100%;
+  height: 100%
+}

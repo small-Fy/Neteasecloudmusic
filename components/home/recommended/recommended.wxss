@@ -1,0 +1,301 @@
+.topMusicList {
+  display: flex;
+  justify-content: space-between;
+  margin: 40rpx 0;
+}
+
+.topMusicList .left {
+  font-size: 36rpx;
+  font-weight: 700;
+}
+
+.topMusicList .right {
+  font-size: 24rpx;
+  padding: 6rpx;
+  border-radius: 16rpx;
+  border: 2rpx solid #333;
+}
+
+.musicList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.musicList .item {
+  margin-bottom: 20rpx;
+  position: relative;
+}
+
+.musicList .item .img {
+  width: 230rpx;
+  height: 230rpx;
+}
+
+.musicList .item .img image {
+  width: 100%;
+  height: 100%;
+}
+
+.musicList .item .name {
+  width: 240rpx;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  text-overflow: ellipsis;
+  font-size: 26rpx
+}
+
+.musicList .item .playCount {
+  color: white;
+  font-size: 24rpx;
+  display: flex;
+  position: absolute;
+  top: 10rpx;
+  right: 22rpx;
+}
+
+.musicList .item .playCount .img {
+  width: 30rpx;
+  height: 30rpx;
+}
+
+.musicList .item .playCount .img image {
+  width: 100%;
+  height: 100%;
+}
+
+.topNew{
+  display: flex;
+  justify-content: space-between;
+  margin: 40rpx 0;
+}
+.topNew .left{
+  display: flex
+}
+.topNew .left .line{
+  height: 50rpx;
+  margin: 0 15rpx;
+  border-right: 2rpx solid #333
+}
+.topNew .left .newMusic{
+  font-size: 30rpx;
+  line-height: 58rpx
+}
+.topNew .left .font{
+  color: black;
+  font-size: 36rpx;
+  line-height: 58rpx;
+  font-weight: 700
+}
+.topNew .right{
+  font-size: 24rpx;
+  padding: 6rpx;
+  height: 38rpx;
+  line-height: 38rpx;
+  border-radius: 16rpx;
+  border: 2rpx solid #333;
+}
+
+.newDisc {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.newDisc .item {
+  margin-bottom: 20rpx;
+  position: relative;
+}
+
+.newDisc .item .img {
+  width: 230rpx;
+  height: 230rpx;
+}
+
+.newDisc .item .img image {
+  width: 100%;
+  height: 100%;
+}
+
+.newDisc .item .name {
+  width: 240rpx;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  text-overflow: ellipsis;
+  font-size: 26rpx
+}
+
+
+.newMusic {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.newMusic .item {
+  margin-bottom: 20rpx;
+  position: relative;
+}
+
+.newMusic .item .img {
+  width: 230rpx;
+  height: 230rpx;
+}
+
+.newMusic .item .img image {
+  width: 100%;
+  height: 100%;
+}
+
+.newMusic .item .name {
+  width: 240rpx;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  text-overflow: ellipsis;
+  font-size: 26rpx
+}
+
+.newMusic .item .playCount {
+  color: white;
+  font-size: 24rpx;
+  display: flex;
+  position: absolute;
+  top: 10rpx;
+  right: 22rpx;
+}
+
+.newMusic .item .playCount .img {
+  width: 30rpx;
+  height: 30rpx;
+}
+
+.newMusic .item .playCount .img image {
+  width: 100%;
+  height: 100%;
+}
+
+.topMusicList {
+  display: flex;
+  justify-content: space-between;
+  margin: 40rpx 0;
+}
+
+.topMusicList .left {
+  font-size: 36rpx;
+  font-weight: 700;
+}
+
+.topMusicList .right {
+  font-size: 24rpx;
+  padding: 6rpx;
+  border-radius: 16rpx;
+  border: 2rpx solid #333;
+}
+
+.newPower {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.newPower .item {
+  margin-bottom: 20rpx;
+  position: relative;
+}
+
+.newPower .item .img {
+  width: 230rpx;
+  height: 230rpx;
+}
+
+.newPower .item .img image {
+  width: 100%;
+  height: 100%;
+}
+
+.newPower .item .name {
+  width: 240rpx;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  text-overflow: ellipsis;
+  font-size: 26rpx
+}
+
+.newPower .item .playCount {
+  color: white;
+  font-size: 24rpx;
+  display: flex;
+  position: absolute;
+  top: 10rpx;
+  right: 22rpx;
+}
+
+.newPower .item .playCount .img {
+  width: 30rpx;
+  height: 30rpx;
+}
+
+.newPower .item .playCount .img image {
+  width: 100%;
+  height: 100%;
+}
+
+.newProgram {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-bottom: 40rpx
+}
+
+.newProgram .item {
+  margin-bottom: 20rpx;
+  position: relative;
+}
+
+.newProgram .item .img {
+  width: 230rpx;
+  height: 230rpx;
+}
+
+.newProgram .item .img image {
+  width: 100%;
+  height: 100%;
+}
+
+.newProgram .item .name {
+  width: 240rpx;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  text-overflow: ellipsis;
+  font-size: 26rpx
+}
+
+.newProgram .item .playCount {
+  color: white;
+  font-size: 24rpx;
+  display: flex;
+  position: absolute;
+  top: 10rpx;
+  right: 22rpx;
+}
+
+.newProgram .item .playCount .img {
+  width: 30rpx;
+  height: 30rpx;
+}
+
+.newProgram .item .playCount .img image {
+  width: 100%;
+  height: 100%;
+}
+

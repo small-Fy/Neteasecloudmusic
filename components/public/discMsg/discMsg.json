@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "van-tag": "../../../lib/vant/tag/index"
+  }
+}

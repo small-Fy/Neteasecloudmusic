@@ -1,0 +1,166 @@
+<import src="../../lib/wxParse/wxParse.wxml" />
+
+<view class="singerDetail">
+  <view class="backgroungImg">
+    <image src="{{picUrl}}"></image>
+  </view>
+</view>
+
+
+<view class="inner">
+  <view class="top">
+    <view class="item {{topIndex===index?'font':''}}" wx:for="{{top}}" wx:key="{{index}}" bindtap="chooseClassify" data-index="{{index}}">
+      <view class="text">{{item}}</view>
+    </view>
+  </view>
+</view>
+
+<view class="list" wx:if="{{topIndex===0}}">
+  <view class="playList">
+    <view class="item" wx:for="{{hotSongs}}" wx:key="{{index}}" bindtap="playMusic" data-item="{{item}}" data-index="{{index}}">
+      <view class="conditions {{clickItem===index?'font':''}}">
+        <view class="left">
+          <view class="index" wx:if="{{clickItem!==index}}">{{index+1}}</view>
+          <view class="icon" wx:if="{{clickItem===index}}">
+            <image src="../../images/horn.png"></image>
+          </view>
+          <view class="music">
+            <view class="name">{{item.name}}</view>
+            <view class="albumName">{{item.ar[0].name}}-{{item.al.name}}</view>
+          </view>
+        </view>
+        <view class="right">
+          <view class="play-item">
+            <image src="../../images/play-item.png"></image>
+          </view>
+          <view class="menu">
+            <image src="../../images/menu.png"></image>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="more">
+    <view class="text">更多热歌</view>
+    <view class="icon">
+      <van-icon name="arrow" />
+    </view>
+  </view>
+</view>
+
+<view class="lists" wx:if="{{topIndex===1}}">
+  <view class="playList">
+    <view class="item" wx:for="{{allSongs}}" wx:key="{{index}}" bindtap="playMusic" data-item="{{item}}" data-index="{{index}}">
+      <view class="conditions {{clickItem===index?'font':''}}">
+        <view class="left">
+          <view class="index" wx:if="{{clickItem!==index}}">{{index+1}}</view>
+          <view class="icon" wx:if="{{clickItem===index}}">
+            <image src="../../images/horn.png"></image>
+          </view>
+          <view class="music">
+            <view class="name">{{item.name}}</view>
+            <view class="albumName">{{item.ar[0].name}}-{{item.al.name}}</view>
+          </view>
+        </view>
+        <view class="right">
+          <view class="play-item">
+            <image src="../../images/play-item.png"></image>
+          </view>
+          <view class="menu">
+            <image src="../../images/menu.png"></image>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="more">
+    <view class="text">更多热歌</view>
+    <view class="icon">
+      <van-icon name="arrow" />
+    </view>
+  </view>
+</view>
+
+<view class="album" wx:if="{{topIndex===2}}">
+  <view class="item" wx:for="{{hotAlbums}}" wx:key="{{index}}">
+    <view class="left">
+      <view class="coverUrl">
+        <image src="{{item.picUrl}}"></image>
+      </view>
+    </view>
+    <view class="right">
+      <text class="message">{{item.name}}</text>
+      <view class="base">
+        <view class="durationms">{{item.artist.name}}</view>
+        <text class="userName">{{item.publishTime}}\t歌曲{{item.size}}</text>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class="vedios" wx:if="{{topIndex===3}}">
+  <view class="item" wx:for="{{searchMsg}}" wx:key="{{index}}">
+    <view class="left">
+      <view class="coverUrl">
+        <image src="{{item.coverUrl}}"></image>
+      </view>
+      <view class="playCount">
+        <view class="img">
+          <image src="../../../images/play.png"></image>
+        </view>
+        <view>{{item.playTime}}</view>
+      </view>
+    </view>
+    <view class="right">
+      <view class="msg">{{item.title}}</view>
+      <view class="bottom">
+        <view class="durationms">{{item.durationms}}</view>
+        <text class="userName">by\t{{item.creator[0].userName}}</text>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class="events" wx:if="{{topIndex===4}}">
+  <view class="item" wx:for="{{events}}" wx:key="{{index}}">
+    <view class="left">
+      <view class="avatarUrl">
+        <image src="{{item.user.avatarUrl}}"></image>
+      </view>
+    </view>
+    <view class="right">
+      <view class="top">
+        <view class="singerName">{{item.user.nickname}}</view>
+        <view class="resourceTitle">{{item.info.commentThread.resourceTitle}}</view>
+      </view>
+      <view class="eventTime">{{item.eventTime}}</view>
+      <view class="albumDetail" wx:if="{{item.json.song}}">
+        <view class="albumPic">
+          <image src="{{item.json.song.album.picUrl}}"></image>
+        </view>
+        <view class="albumMsg">
+          <view class="albumName">{{item.json.song.name}}</view>
+          <view class="singerName">{{item.json.song.artists[0].name}}</view>
+        </view>
+      </view>
+      <view class="mvDetail" wx:if="{{item.json.mv}}">
+        <view class="mvImg">
+          <image src="{{item.json.mv.imgurl}}"></image>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class="msg" wx:if="{{topIndex===0}}">
+  <view class="title">基本信息</view>
+  <view class="nickname">昵称：{{name}}</view>
+  <view class="interduce">简介：
+    <template is="wxParse" data="{{wxParseData:article.nodes}}" />
+  </view>
+</view>
+
+
+
+
+<musicList class="bottom" wx:if="{{bottomFlag}}" name="{{name}}" author="{{author}}" poster="{{poster}}" backgroundAudio="{{backgroundAudio}}" startFlag="{{startFlag}}" src="{{src}}"></musicList>

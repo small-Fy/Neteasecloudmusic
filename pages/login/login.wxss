@@ -1,0 +1,102 @@
+.me {
+  padding: 0 18rpx;
+}
+
+.me .notLogin .top .phoneNumber {
+  width: 580rpx;
+  margin: 0 auto;
+  
+}
+
+.me .notLogin .top .phoneNumber .phone {
+  display: flex;
+}
+
+.me .notLogin .top .phoneNumber .phone .required {
+  line-height: 110rpx;
+  width: 20rpx;
+  font-size: 40rpx;
+  margin-right: 10rpx;
+  color: #c20c0c;
+}
+
+.me .notLogin .top .phoneNumber .phone .phone-icon {
+  width: 50rpx;
+  height: 50rpx;
+  line-height: 130rpx;
+  margin-right: 40rpx;
+}
+
+.me .notLogin .top .phoneNumber .phone .phone-icon image {
+  width: 100%;
+  height: 100%;
+}
+
+.me .notLogin .top .phoneNumber .phone input {
+  height: 100rpx;
+}
+
+.me .notLogin .top .phoneNumber .password {
+  display: flex;
+}
+
+.me .notLogin .top .phoneNumber .password .required {
+  line-height: 110rpx;
+  width: 20rpx;
+  font-size: 40rpx;
+  margin-right: 10rpx;
+  color: #c20c0c;
+}
+
+.me .notLogin .top .phoneNumber .password .password-icon {
+  width: 50rpx;
+  height: 50rpx;
+  line-height: 130rpx;
+  margin-right: 40rpx;
+}
+
+.me .notLogin .top .password .password-icon image {
+  width: 100%;
+  height: 100%;
+}
+
+.me .notLogin .top .password input {
+  height: 100rpx;
+}
+
+.me .notLogin .top .van-ellipsis {
+  font-size: 34rpx;
+}
+
+.me .notLogin .top .van-tab__pane--active {
+  margin-top: 40rpx;
+}
+
+.me .notLogin .bottom .btn {
+  display: flex;
+  justify-content: space-around;
+}
+
+.me .notLogin .btn .login {
+  width: 200rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  background-color: #c20c0c;
+  border-radius: 20rpx;
+  position: fixed;
+  bottom: 180rpx;
+  left: 80rpx;
+}
+
+.me .notLogin .btn .register {
+  width: 200rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  background-color: coral;
+  border-radius: 20rpx;
+  position: fixed;
+  bottom: 180rpx;
+  right: 80rpx;
+}

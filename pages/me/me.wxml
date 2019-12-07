@@ -1,0 +1,49 @@
+<view class="me">
+  <view class="notLogin" wx:if="{{!loginFlag}}">
+    <view class="text">您还没有登录哦</view>
+    <view class="btn" bindtap="toLogin">
+      登录
+    </view>
+  </view>
+  <view class="login" wx:else>
+    <view class="top">
+      <view class="left">
+        <view class="portrait">
+          <image src="{{userMsg.profile.avatarUrl}}"></image>
+        </view>
+        <view class="msg">
+          <view class="nickname">{{userMsg.profile.nickname}}</view>
+          <view class="level">lv.{{userMsg.level}}</view>
+        </view>
+      </view>
+      <view class="signIn">
+        <view class="text">签到</view>
+      </view>
+    </view>
+    <view class="state">
+        <view class="dynamic">
+          <view class="count">{{dynamicList.length}}</view>
+          <view class="name">动态</view>
+        </view>
+        <view class="focus">
+          <view class="count">{{focusList.length}}</view>
+          <view class="name">关注</view>
+        </view>
+        <view class="fans">
+          <view class="count">{{fansList.length}}</view>
+          <view class="name">粉丝</view>
+        </view>
+        <view class="edit" bindtap="editMsg">
+          <view class="edit-icon">
+            <image src="../../images/edit.png"></image>
+          </view>
+          <view class="name">编辑资料</view>
+        </view>
+    </view>
+    <view class="quit">
+      <view class="btn" bindtap="quit">
+        退出登录
+      </view>
+    </view>
+  </view>
+</view>
