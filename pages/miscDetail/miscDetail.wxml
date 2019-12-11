@@ -1,2 +1,1 @@
-<!--pages/miscDetail/miscDetail.wxml-->
-<text>pages/miscDetail/miscDetail.wxml</text>
+<musicList class="bottom" wx:if="{{bottomFlag}}"></musicList>

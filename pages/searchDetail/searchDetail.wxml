@@ -23,7 +23,6 @@
       <van-tab title="单曲">
         <single keyWord="{{keyWord}}"></single>
       </van-tab>
-      <van-tab title="云村">内容 1</van-tab>
       <van-tab title="视频">
         <vedio keyWord="{{keyWord}}"></vedio>
       </van-tab>
@@ -44,11 +43,13 @@
       </van-tab>
     </van-tabs>
   </view>
+</view>
 
-  <!-- <van-popup show="{{ searchShow }}" custom-style="height: 60%;width:90%;margin-top:100rpx;backgroud-color:#eee" position="top" bind:click-overlay="closePop" overlay-style="opacity:0.3">
+<musicList class="bottom" wx:if="{{bottomFlag}}"></musicList>
+
+<van-popup show="{{ searchShow }}" custom-style="height: 60%;width:90%;margin-top:100rpx;backgroud-color:#eee" position="top" bind:click-overlay="closePop" overlay-style="opacity:0.3">
   <view class="textTop">搜索"{{keyWord}}"</view>
   <view class="item" wx:for="{{allMatch}}" wx:key="{{index}}" bindtap="toSearchDetail" data-keyword="{{item.keyword}}">
     <van-search value="{{item.keyword}}" disabled/>
   </view>
-</van-popup> -->
-</view>
+</van-popup>

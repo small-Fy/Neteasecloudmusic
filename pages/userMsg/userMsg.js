@@ -1,7 +1,10 @@
 const app = new getApp()
 let time = require('../../utils/util.js')
 import areaList from "../../lib/area.js"
-Page({
+import create from '../../utils/create'
+import store from '../../store/index'
+create.Page(store, {
+  use: ['name', 'author', 'poster', 'src', 'playFlag'],
 
   /**
    * 页面的初始数据
@@ -26,6 +29,8 @@ Page({
     // 生日
     birthday: "",
     updateBirthday: "",
+    // 底部栏音乐播放显示标志
+    bottomFlag: false,
     // 是否显示弹出层
     showData: false,
     showCity: false,
@@ -205,7 +210,11 @@ Page({
       nickname: wx.getStorageSync("userMsg").profile.nickname,
       signature: wx.getStorageSync("userMsg").profile.signature
     })
-    console.log(this.data.userMsg, 444)
+    if (this.store.data.playFlag) {
+      this.setData({
+        bottomFlag: true
+      })
+    }
   },
 
   /**

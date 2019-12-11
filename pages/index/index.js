@@ -1,6 +1,8 @@
 const app = new getApp()
-Page({
-
+import create from '../../utils/create'
+import store from '../../store/index'
+create.Page(store, {
+  use: ['name', 'author', 'poster', 'src', 'playFlag'],
   /**
    * 页面的初始数据
    */
@@ -20,7 +22,9 @@ Page({
     // 推荐节目
     program:[],
     // 搜索组件显示标志
-    searchFlag:false
+    searchFlag:false,
+    // 底部栏音乐播放显示标志
+    bottomFlag:false
   },
   // 获取搜索框焦点
   onFocus(){
@@ -180,7 +184,11 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function() {
-
+    if (this.store.data.playFlag) {
+      this.setData({
+        bottomFlag: true
+      })
+    }
   },
 
   /**

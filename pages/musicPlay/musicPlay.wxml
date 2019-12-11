@@ -1,22 +1,36 @@
 <view class="navigationBar">
-    <view class="back" bindtap="back">
-      <van-icon name="arrow-left" size="60rpx" />
-    </view>
-    <view class="msg">
-      <view class="text">{{musicDetails[0].name}}</view>
-      <view class="copywriter">{{musicDetails[0].ar[0].name}}</view>
-    </view>
+  <view class="back" bindtap="back">
+    <van-icon name="arrow-left" size="60rpx" />
+  </view>
+  <view class="msg" wx:if="{{!djFlag}}">
+    <view class="text">{{musicDetails[0].name}}</view>
+    <view class="copywriter">{{musicDetails[0].ar[0].name}}</view>
   </view>
 
-<view class="backgroundImg">
+  <view class="msg" wx:if="{{djFlag}}">
+    <view class="text">{{musicDetails.name}}</view>
+    <view class="copywriter">{{musicDetails.artists[0].name}}</view>
+  </view>
+</view>
+
+<view class="backgroundImg" wx:if="{{!djFlag}}">
   <image src="{{musicDetails[0].al.picUrl}}"></image>
 </view>
 
+<view class="backgroundImg" wx:if="{{djFlag}}">
+  <image src="{{poster}}"></image>
+</view>
 
 
-<view class="disc">
+<view class="disc" wx:if="{{!djFlag}}">
   <view class="pic {{playFlag?'':'stop'}}">
     <image src="{{musicDetails[0].al.picUrl}}"></image>
+  </view>
+</view>
+
+<view class="disc" wx:if="{{djFlag}}">
+  <view class="pic {{playFlag?'':'stop'}}">
+    <image src="{{poster}}"></image>
   </view>
 </view>
 
@@ -41,7 +55,7 @@
 
   <view class="playBar">
     <view class="process">
-      <van-slider value="{{percentage}}" bar-height="2px" active-color="#c20c0c" bind:change="fastForward"/>
+      <van-slider value="{{percentage}}" bar-height="2px" active-color="#c20c0c" bind:change="fastForward" />
     </view>
   </view>
   <view class="operation">
@@ -52,7 +66,7 @@
       <image src="../../images/lastSong.png"></image>
     </view>
     <view class="play">
-      <image src="../../images/play-white.png" wx:if="{{!playFlag}}" bindtap="audioPlay"></image>
+      <image src="../../images/play-white.png" wx:if="{{!playFlag}}" bindtap="play"></image>
       <image src="../../images/pause-white.png" wx:if="{{playFlag}}" bindtap="audioPause"></image>
     </view>
     <view class="nextSong" bindtap="nextSong">
@@ -68,5 +82,5 @@
 </view>
 
 <van-popup show="{{ discMsg }}" bind:close="closeDiscMsg" custom-style="height: 60%;" position="bottom" round="{{true}}">
-<discMsg bind:getSonId="getSonId"></discMsg>
+  <discMsg bind:getSonId="getSonId"></discMsg>
 </van-popup>

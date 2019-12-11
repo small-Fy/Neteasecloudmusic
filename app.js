@@ -1,5 +1,6 @@
 const Fly = require("./lib/fly/wx.js")
 const fly = new Fly()
+const backgroundAudio = wx.getBackgroundAudioManager()
 fly.config.baseURL ="http://49.233.66.125:3000"
 App({
 
@@ -31,6 +32,7 @@ App({
     
   },
   globalData: {
-    fly
+    fly,
+    backgroundAudio
   }
 })

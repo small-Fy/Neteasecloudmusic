@@ -1,4 +1,4 @@
-<view class="comprehensive">
+<view class="comprehensive" wx:if="{{dataFlag}}">
   <view class="single">
     <view class="top">
       <view class="left">单曲</view>
@@ -10,7 +10,7 @@
       </view>
     </view>
     <view class="inner">
-      <view class="item" wx:for="{{searchMsg.song.songs}}" wx:key="{{index}}">
+      <view class="item" wx:for="{{searchMsg.song.songs}}" wx:key="{{index}}" bindtap="toPlay" data-item="{{item}}">
         <view class="left">
           <view class="songName">
             <view class="name">{{item.name}}</view>
@@ -204,4 +204,8 @@
     </view>
     <view class="moreText" wx:if="{{searchMsg.artist.more}}">{{searchMsg.artist.moreText}}></view>
   </view>
+</view>
+
+<view class="data_none"  wx:if="{{!dataFlag}}">
+  暂无数据
 </view>

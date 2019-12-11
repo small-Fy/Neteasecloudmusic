@@ -54,6 +54,9 @@ Component({
         keyWord: e.currentTarget.dataset.keyword
       })
       wx.setStorageSync("searchHistory", this.data.searchHistory)
+      wx.navigateTo({
+        url: `/pages/searchDetail/searchDetail?keyWord=${this.data.keyWord}`,
+      })
     },
     // 删除历史记录
     deleteHistory() {
@@ -75,10 +78,12 @@ Component({
     },
     // 获取本地的搜索记录
     getHistory() {
-      if (!wx.getStorageSync("searchHistory")) {
+      console.log(123)
+      if (wx.getStorageSync("searchHistory")) {
         this.setData({
           searchHistory: wx.getStorageSync("searchHistory")
         })
+        console.log(this.data.searchHistory,456)
       }
     },
     // 随机获取banner的index
@@ -121,7 +126,6 @@ Component({
     },
     // 确认搜索时
     wordConfirm(e) {
-      console.log(this.data.searchHistory,444)
       this.setData({
         keyWord: e.detail.value.trim() === '' ? this.data.defaultWord : e.detail.value.trim()
       })
@@ -133,10 +137,12 @@ Component({
       }
       this.setData({
         searchHistory: this.data.searchHistory,
-        searchFlag: true,
         searchShow: false
       })
       wx.setStorageSync("searchHistory", this.data.searchHistory)
+      wx.navigateTo({
+        url: `/pages/searchDetail/searchDetail?keyWord=${this.data.keyWord}`,
+      })
     },
     // 输入框有值输入时
     wordInput(e) {
@@ -158,8 +164,7 @@ Component({
         })
       } else {
         this.setData({
-          searchShow: false,
-          searchFlag:false
+          searchShow: false
         })
       }
     },
@@ -174,10 +179,12 @@ Component({
       this.setData({
         searchHistory: this.data.searchHistory,
         keyWord: e.currentTarget.dataset.keyword,
-        searchFlag: true,
         searchShow: false
       })
       wx.setStorageSync("searchHistory", this.data.searchHistory)
+      wx.navigateTo({
+        url: `/pages/searchDetail/searchDetail?keyWord=${this.data.keyWord}`,
+      })
     },
     // 点击搜索历史
     clickHistory(e) {
@@ -185,10 +192,12 @@ Component({
       this.data.searchHistory.unshift(e.currentTarget.dataset.item)
       this.setData({
         searchHistory: this.data.searchHistory,
-        searchFlag:true,
         keyWord: e.currentTarget.dataset.item
       })
       wx.setStorageSync("searchHistory", this.data.searchHistory)
+      wx.navigateTo({
+        url: `/pages/searchDetail/searchDetail?keyWord=${this.data.keyWord}`,
+      })
     }
   }
 })

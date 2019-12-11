@@ -29,3 +29,5 @@
 <view class="btn" bindtap="update">
   确认修改
 </view>
+
+<musicList class="bottom" wx:if="{{bottomFlag}}"></musicList>

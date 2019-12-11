@@ -1,6 +1,8 @@
 const app = new getApp()
-Page({
-
+import create from '../../utils/create'
+import store from '../../store/index'
+create.Page(store, {
+  use: ['name', 'author', 'poster', 'src', 'playFlag'],
   /**
    * 页面的初始数据
    */
@@ -22,7 +24,7 @@ Page({
     // 底部播放组件
     bottomFlag: false,
     // 播放回调函数
-    backgroundAudio: {},
+    // backgroundAudio: {},
     musicData: [],
     // 歌曲url
     src: '',
@@ -50,7 +52,6 @@ Page({
           playlist: res.data.playlist,
           playCount: `${(res.data.playlist.playCount / 100000000).toFixed(1)}亿`
         })
-        console.log(this.data.playlist, 45679)
       } else {
         this.setData({
           playlist: res.data.playlist,
@@ -70,7 +71,6 @@ Page({
           trackCount: res.data.playlist.trackCount
         })
       }
-      console.log(this.data.trackCount, 45679)
       this.setData({
         playlist: res.data.playlist
       })
@@ -79,44 +79,8 @@ Page({
       console.log(err)
     })
   },
-  // 获取url
-  getUrl(id) {
-    wx.showLoading({
-      title: '加载中',
-    })
-    app.globalData.fly.get(`/song/url?id=${id}`).then(res => {
-      if (res) {
-        wx.hideLoading()
-      }
-      this.setData({
-        musicData: res.data.data,
-        src: res.data.data[0].url
-      })
-      this.getPic(this.data.musicId)
-    }).catch(err => {
-      console.log(err)
-    })
-  },
-  // 获取专辑封面
-  getPic(id) {
-    wx.showLoading({
-      title: '加载中',
-    })
-    app.globalData.fly.get(`/song/detail?ids=${id}`).then(res => {
-      if (res) {
-        wx.hideLoading()
-      }
-      this.setData({
-        poster: res.data.songs[0].al.picUrl,
-        bottomFlag: true
-      })
-    }).catch(err => {
-      console.log(err)
-    })
-  },
   // 点击播放
   playMusic(e) {
-    console.log(e.currentTarget.dataset.item, 111)
     this.setData({
       name: e.currentTarget.dataset.item.name,
       author: e.currentTarget.dataset.item.ar[0].name,
@@ -124,29 +88,21 @@ Page({
       musicId: e.currentTarget.dataset.item.id
     })
     wx.setStorageSync("trackIds", this.properties.playlist.trackIds)
-    wx.setStorageSync('musicDetail', {
-      src: this.data.src,
-      singerName: this.data.author,
-      poster: this.data.poster,
-      musicName: this.data.name,
-      flag: false
-    })
     wx.navigateTo({
       url: `../../pages/musicPlay/musicPlay?musicId=${e.currentTarget.dataset.item.id}&playListId=${this.id}&name=${this.data.name}`,
     })
-    this.getUrl(this.data.musicId)
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    if (options.flag){
+    if (options.flag) {
       this.setData({
         id: wx.getStorageSync("ic").id,
         copywriter: wx.getStorageSync("ic").copywriter,
         bottomFlag: options.flag
       })
-    }else{
+    } else {
       this.setData({
         id: options.id,
         copywriter: options.copywriter
@@ -171,7 +127,11 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function() {
-
+    if (this.store.data.playFlag) {
+      this.setData({
+        bottomFlag: true
+      })
+    }
   },
 
   /**

@@ -1,4 +1,6 @@
 {
-  "usingComponents": {},
+  "usingComponents": {
+    "musicList": "../../components/musicList/musicList"
+  },
   "navigationBarTitleText": "登录"
 }

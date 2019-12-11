@@ -1,5 +1,8 @@
 // components/public/discMsg/discMsg.js
-Component({
+import create from '../../../utils/create'
+import store from '../../../store/index'
+create.Component(store,{
+  use: ['name', 'author', 'poster', 'src', 'playFlag','musicId'],
   /**
    * 组件的属性列表
    */
@@ -33,7 +36,6 @@ Component({
     this.setData({
       playlist: wx.getStorageSync("playlist")
     })
-    console.log(this.data.playlist, 444)
   },
   /**
    * 组件的方法列表
@@ -60,6 +62,9 @@ Component({
       this.setData({
         clickItem: e.currentTarget.dataset.index
       })
+      
+      this.store.data.musicId = e.currentTarget.dataset.id
+      console.log(this.store.data.musicId, 46546465465465)
       this.triggerEvent("getSonId", {
         sonId: e.currentTarget.dataset.id, sonIndex: this.data.cycleIndex
       })

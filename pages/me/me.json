@@ -1,6 +1,7 @@
 {
   "usingComponents": {
     "van-field": "../../../lib/vant/field/index",
-    "van-button": "../../../lib/vant/button/index"
+    "van-button": "../../../lib/vant/button/index",
+    "musicList": "../../components/musicList/musicList"
   }
 }

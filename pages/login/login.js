@@ -1,5 +1,8 @@
 const app = new getApp()
-Page({
+import create from '../../utils/create'
+import store from '../../store/index'
+create.Page(store, {
+  use: ['name', 'author', 'poster', 'src', 'playFlag'],
 
   /**
    * 页面的初始数据
@@ -14,7 +17,9 @@ Page({
     // 用户登录信息
     userLoginMsg:{},
     // 用户信息
-    userMsg: {}
+    userMsg: {},
+    // 底部栏音乐播放显示标志
+    bottomFlag: false
 
   },
   switchLogin(e) {
@@ -50,7 +55,6 @@ Page({
         loginPath: `/login/cellphone?phone=${this.data.phone}&password=${this.data.password}`
       })
     } else {
-      console.log(333)
       this.setData({
         loginPath: `/login?email=${this.data.email}&password=${this.data.password}`
       })
@@ -64,7 +68,19 @@ Page({
       })
       this.userDetails()
     }).catch(err => {
-      console.log(err)
+      wx.hideLoading()
+      wx.showModal({
+        title: '用户名或密码错误',
+        content: '重新输入',
+        success: (res => {
+          // 点击确认
+          if (res.confirm) {
+            console.log(res.confirm)
+          } else { //点击取消
+            console.log(res.cancel)
+          }
+        })
+      })
     })
   },
   //获取用户详情
@@ -111,7 +127,11 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function() {
-
+    if (this.store.data.playFlag) {
+      this.setData({
+        bottomFlag: true
+      })
+    }
   },
 
   /**

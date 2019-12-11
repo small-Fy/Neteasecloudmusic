@@ -12,8 +12,7 @@
     </view>
   </view>
 
-  <view class="searchLast" wx:if="{{!searchFlag}}">
-    <view class="banner">
+  <view class="banner">
       <image src="{{banners[0].pic}}"></image>
     </view>
 
@@ -49,41 +48,6 @@
         <view class="right">{{item.score}}</view>
       </view>
     </view>
-  </view>
-
-  <view class="searchNext" wx:if="{{searchFlag}}">
-    <view class="tabs">
-      <van-tabs active="{{ active }}" color='#c20c0c'>
-        <van-tab title="综合">
-          <scroll-view scroll-y="true" style="height: 1020rpx;">
-            <comprehensive keyWord="{{keyWord}}"></comprehensive>
-          </scroll-view>
-        </van-tab>
-        <van-tab title="单曲">
-          <single keyWord="{{keyWord}}"></single>
-        </van-tab>
-        <van-tab title="云村"></van-tab>
-        <van-tab title="视频">
-          <vedio keyWord="{{keyWord}}"></vedio>
-        </van-tab>
-        <van-tab title="歌手">
-          <artist keyWord="{{keyWord}}"></artist>
-        </van-tab>
-        <van-tab title="专辑">
-          <album keyWord="{{keyWord}}"></album>
-        </van-tab>
-        <van-tab title="歌单">
-          <playList keyWord="{{keyWord}}"></playList>
-        </van-tab>
-        <van-tab title="主播电台">
-          <djRadio keyWord="{{keyWord}}"></djRadio>
-        </van-tab>
-        <van-tab title="用户">
-          <user keyWord="{{keyWord}}"></user>
-        </van-tab>
-      </van-tabs>
-    </view>
-  </view>
 </view>
 
 

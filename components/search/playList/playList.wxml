@@ -2,18 +2,22 @@
 
   <view class="inner">
     <view class="item" wx:for="{{searchMsg}}" wx:key="{{index}}">
-    <view class="left">
-      <view class="coverUrl">
-        <image src="{{item.coverImgUrl}}"></image>
+      <view class="left">
+        <view class="coverUrl">
+          <image src="{{item.coverImgUrl}}"></image>
+        </view>
       </view>
-    </view>
-    <view class="right">
-      <view class="msg">{{item.name}}</view>
-      <view class="bottom">
-        <view class="durationms">{{item.trackCount}}首</view>
-        <text class="userName">by\t{{item.creator.nickname}},播放{{item.playCount}}次</text>
+      <view class="right">
+        <view class="msg">{{item.name}}</view>
+        <view class="bottom">
+          <view class="durationms">{{item.trackCount}}首</view>
+          <text class="userName">by\t{{item.creator.nickname}},播放{{item.playCount}}次</text>
+        </view>
       </view>
     </view>
   </view>
-  </view>
+
+  <view class="data_none"  wx:if="{{!dataFlag}}">
+  暂无数据
+</view>
 </scroll-view>

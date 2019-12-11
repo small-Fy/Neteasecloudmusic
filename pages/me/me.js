@@ -1,5 +1,8 @@
 const app = new getApp()
-Page({
+import create from '../../utils/create'
+import store from '../../store/index'
+create.Page(store, {
+  use: ['name', 'author', 'poster', 'src', 'playFlag'],
 
   /**
    * 页面的初始数据
@@ -13,7 +16,9 @@ Page({
     dynamicList: [],
     // 粉丝列表
     fansList: [],
-    loginFlag:false
+    loginFlag: false,
+    // 底部栏音乐播放显示标志
+    bottomFlag: false
   },
   // 去登陆
   toLogin() {
@@ -124,6 +129,11 @@ Page({
       userMsg: wx.getStorageSync("userMsg")
     })
     this.ifLogin()
+    if (this.store.data.playFlag) {
+      this.setData({
+        bottomFlag: true
+      })
+    }
   },
 
   /**

@@ -12,4 +12,8 @@
       </view>
     </view>
   </view>
+
+  <view class="data_none"  wx:if="{{!dataFlag}}">
+  暂无数据
+</view>
 </scroll-view>

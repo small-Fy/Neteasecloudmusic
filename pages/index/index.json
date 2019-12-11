@@ -3,6 +3,7 @@
     "banner": "../../components/home/banner/banner",
     "menu":"../../components/home/menu/menu",
     "recommended": "../../components/home/recommended/recommended",
-    "searchInner":"../../components/home/searchInner/searchInner"
+    "searchInner":"../../components/home/searchInner/searchInner",
+    "musicList":"../../components/musicList/musicList"
   }
 }

@@ -73,7 +73,7 @@
           </view>
         </view>
       </view>
-      <view class="program" wx:for="{{programs}}" wx:key="{{index}}" bindtap="playMusic" data-index="{{index}}">
+      <view class="program" wx:for="{{programs}}" wx:key="{{index}}" bindtap="playMusic" data-index="{{index}}" data-item="{{item}}">
         <view class="conditions {{clickItem===index?'font':''}}">
           <view class="left">
             <view class="index" wx:if="{{clickItem!==index}}">{{item.serialNum}}</view>
@@ -99,3 +99,5 @@
     </view>
   </view>
 </view>
+
+<musicList class="bottom" wx:if="{{bottomFlag}}"></musicList>

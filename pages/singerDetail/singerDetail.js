@@ -1,7 +1,10 @@
 const app = new getApp()
 let time = require('../../utils/util.js')
 let WxParse = require('../../lib/wxParse/wxParse.js')
-Page({
+import create from '../../utils/create'
+import store from '../../store/index'
+create.Page(store, {
+  use: ['name', 'author', 'poster', 'src', 'playFlag'],
 
   /**
    * 页面的初始数据
@@ -37,10 +40,9 @@ Page({
     offset: 0,
     // 取出数量
     limit: 50,
-    top: ["主页", "歌曲", "专辑", "视频", "动态"],
-    wxParseListArr: [],
-    msgArr: [], //列表中渲染数据的数组
-    msgListArr: [], //这个用来接收每次请求到的数据叠加数组（重要用于上拉加载更多，多次请求）
+    top: ["主页", "歌曲", "专辑", "动态"],
+    // 底部栏音乐播放显示标志
+    bottomFlag: false,
   },
   // 切换显示顶部显示内容
   chooseClassify(e) {
@@ -51,7 +53,7 @@ Page({
       this.getAll(this.data.id)
     } else if (this.data.topIndex === 2) {
       this.getAlbum(this.data.id)
-    } else if (this.data.topIndex === 4) {
+    } else if (this.data.topIndex === 3) {
       this.getEvent(this.data.accountId)
     }
   },
@@ -191,7 +193,11 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function() {
-
+    if (this.store.data.playFlag) {
+      this.setData({
+        bottomFlag: true
+      })
+    }
   },
 
   /**

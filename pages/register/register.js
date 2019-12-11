@@ -1,6 +1,8 @@
 const app = new getApp()
-Page({
-
+import create from '../../utils/create'
+import store from '../../store/index'
+create.Page(store, {
+  use: ['name', 'author', 'poster', 'src', 'playFlag'],
   /**
    * 页面的初始数据
    */
@@ -9,7 +11,9 @@ Page({
     password:"",
     captcha:"",
     nickname:"",
-    verifyFlag:false
+    verifyFlag:false,
+    // 底部栏音乐播放显示标志
+    bottomFlag: false
   },
   // 发送验证码
   sendCode(){
@@ -151,7 +155,11 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    if (this.store.data.playFlag) {
+      this.setData({
+        bottomFlag: true
+      })
+    }
   },
 
   /**

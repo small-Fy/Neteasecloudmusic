@@ -1,19 +1,25 @@
-<view class="home" wx:if="{{!searchFlag}}">
-  <view class="search">
-    <view class="musicPavilion">音乐馆</view>
-    <view class="search-body">
-      <van-search value="{{ keyWord }}" placeholder="请输入搜索关键词" use-action-slot bind:focus="onFocus">
-        <view slot="action" bind:tap="onSearch">搜索</view>
-      </van-search>
+<scroll-view scroll-y="true" style="height: 1100rpx;">
+
+  <view class="home" wx:if="{{!searchFlag}}">
+    <view class="search">
+      <view class="musicPavilion">音乐馆</view>
+      <view class="search-body">
+        <van-search value="{{ keyWord }}" placeholder="请输入搜索关键词" use-action-slot bind:focus="onFocus">
+          <view slot="action" bind:tap="onSearch">搜索</view>
+        </van-search>
+      </view>
+      <view class="music-icon">
+        <image src="../../images/music_home.png"></image>
+      </view>
     </view>
-    <view class="music-icon">
-      <image src="../../images/music_home.png"></image>
-    </view>
+    <banner banners="{{banners}}"></banner>
+    <menu></menu>
+    <recommended musicList="{{musicList}}" albumsMusic="{{albumsMusic}}" albumsDisc="{{albumsDisc}}" newPower="{{newPower}}" radios="{{radios}}" program="{{program}}"></recommended>
   </view>
-  <banner banners="{{banners}}"></banner>
-  <menu></menu>
-  <recommended musicList="{{musicList}}" albumsMusic="{{albumsMusic}}" albumsDisc="{{albumsDisc}}" newPower="{{newPower}}" radios="{{radios}}" program="{{program}}"></recommended>
-</view>
+
+</scroll-view>
+
+<musicList class="bottom"  wx:if="{{bottomFlag}}"></musicList>
 
 <van-popup show="{{ searchFlag }}" bind:close="onClose" custom-style="height: 100%;width:100%" closeable close-icon="arrow-left" close-icon-position="top-left">
   <searchInner banners="{{banners}}" bind:mysearch="mysearch"></searchInner>

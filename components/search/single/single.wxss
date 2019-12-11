@@ -1,3 +1,10 @@
+.data_none{
+  text-align: center;
+  font-size: 60rpx;
+  font-style: italic;
+  margin-top: 60rpx
+}
+
 .single{
   padding: 20rpx
 }

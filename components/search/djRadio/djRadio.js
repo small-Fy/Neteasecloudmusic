@@ -9,13 +9,24 @@ Component({
       type: String
     }
   },
-
+  observers: {
+    "keyWord" (value) {
+      if (value !== "") {
+        this.setData({
+          searchMsg: []
+        })
+        this.getMsg(value, this.data.offset, this.data.limit, this.data.type[6])
+      }
+    }
+  },
   /**
    * 组件的初始数据
    */
   data: {
     // 用户搜索信息
     searchMsg: [],
+    // 是否有数据标志
+    dataFlag: true,
     // 偏移量，用于分页
     offset: 0,
     // 每页数据量
@@ -35,12 +46,23 @@ Component({
         title: '加载中',
       })
       app.globalData.fly.get(`/search?keywords=${keyword}&offset=${offset}&limit=${limit}&type=${type}`).then(res => {
-        if (res) {
-          wx.hideLoading()
+        if (res.data.result.djRadiosCount !== 0) {
+          if (res.data.result.djRadiosCount > this.data.searchMsg.length) {
+            wx.hideLoading()
+            this.setData({
+              searchMsg: this.data.searchMsg.concat(res.data.result.djRadios),
+              dataFlag: true
+            })
+          } else {
+            wx.hideLoading()
+          }
+        }else{
           this.setData({
-            searchMsg: this.data.searchMsg.concat(res.data.result.djRadios)
+            dataFlag: false
           })
+          wx.hideLoading()
         }
+        
       }).catch(err => {
         console.log(err)
       })

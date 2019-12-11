@@ -94,4 +94,4 @@
   </view>
 </view>
 
-<musicList class="bottom" wx:if="{{bottomFlag}}" name="{{name}}" author="{{author}}" poster="{{poster}}" backgroundAudio="{{backgroundAudio}}" startFlag="{{startFlag}}" src="{{src}}"></musicList>
+<musicList class="bottom" wx:if="{{bottomFlag}}"></musicList>

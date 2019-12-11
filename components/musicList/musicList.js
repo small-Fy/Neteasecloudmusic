@@ -1,78 +1,61 @@
 const app = new getApp()
-Component({
+import create from '../../utils/create'
+import store from '../../store/index'
+create.Component(store, {
+  use: ['name', 'author', 'poster', 'src', 'playFlag','musicId'],
   /**
    * 组件的属性列表
    */
-  properties: {
-    // 背景音乐回调函数
-    backgroundAudio:{
-      type:Object
-    },
-    startFlag:{
-      type:Boolean
-    },
-    name:{
-      type:String
-    },
-    author: {
-      type: String
-    },
-    poster: {
-      type: String
-    },
-    src:{
-      type:String
-    }
-  },
+  properties: {},
 
   /**
    * 组件的初始数据
    */
   data: {
-    // 背景音乐回调函数
-    backgroundAudio:{},
     // 播放暂停标志
-    startFlag:false,
+    startFlag: false,
     author: '',
-    musicDetail:{}
+    musicDetail: {}
   },
   /**
    * 组件的方法列表
    */
-  ready(){
-    console.log(12345789)
-    this.setData({
-      musicDetail: wx.getStorageSync("musicDetail")
-    })
-    this.audioPlay()
+  ready() {
+    if (!app.globalData.backgroundAudio.paused) {
+      this.audioPlay()
+    } else {
+      this.audioPause()
+    }
+    this.store.data.playFlag = true
   },
-  
+
   methods: {
     // 播放
     audioPlay() {
-      console.log(999)
       this.setData({
         startFlag: true
       })
-      this.play()
+      app.globalData.backgroundAudio.play()
     },
     // 暂停
     audioPause() {
-      console.log(this.data.musicDetail.src, this.data.musicDetail.name, this.data.musicDetail.poster,888)
       this.setData({
         startFlag: false
       })
-      this.data.backgroundAudio.pause()
+      app.globalData.backgroundAudio.pause()
     },
     // 播放
     play() {
-      let backgroundAudio = wx.getBackgroundAudioManager()
-      backgroundAudio.src = this.data.musicDetail.src
-      backgroundAudio.title = this.data.musicDetail.musicName
-      backgroundAudio.coverImgUrl = this.data.musicDetail.poster
-      this.setData({
-        backgroundAudio
-      })
+      app.globalData.backgroundAudio.src = this.store.data.src
+      app.globalData.backgroundAudio.title = this.store.data.name
+      app.globalData.backgroundAudio.coverImgUrl = this.store.data.poster
     },
+    // 点击跳转到播放页面
+    toPlay() {
+      console.log(this.store.data.musicId, 98754131)
+      wx.navigateTo({
+        url: `../../pages/musicPlay/musicPlay?musicId=${this.store.data.musicId}&name=${this.store.data.name}`,
+      })
+    }
   }
 })

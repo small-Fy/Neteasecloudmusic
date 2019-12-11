@@ -84,13 +84,21 @@
 }
 
 .discMsg .inner .item .left .bigSize{
-  font-size: 36rpx
+  font-size: 32rpx;
+  width: 250rpx;
+  overflow:hidden;
+  white-space: nowrap; 
+  text-overflow: ellipsis;
 }
 
 .discMsg .inner .item .left .smallSize{
-  font-size: 30rpx;
+  font-size: 32rpx;
   color: #666;
-  line-height: 50rpx
+  line-height: 50rpx;
+  width: 200rpx;
+  overflow:hidden;
+  white-space: nowrap; 
+  text-overflow: ellipsis;
 }
 
 .discMsg .inner .item .right{
@@ -98,7 +106,8 @@
 }
 
 .discMsg .inner .item .right .tag{
-  margin-right: 60rpx
+  margin-right: 50rpx;
+  width: 100rpx
 }
 
 .discMsg .inner .item .right .icon{

@@ -1,7 +1,10 @@
 const app = new getApp()
 let WxParse = require('../../lib/wxParse/wxParse.js');
 let time = require('../../utils/util.js')
-Page({
+import create from '../../utils/create'
+import store from '../../store/index'
+create.Page(store, {
+  use: ['name', 'author', 'poster', 'src', 'playFlag'],
 
   /**
    * 页面的初始数据
@@ -30,7 +33,9 @@ Page({
     // 排序图标索引
     sortIndex: 0,
     // 播放标志索引
-    clickItem: -1
+    clickItem: -1,
+    // 底部栏音乐播放显示标志
+    bottomFlag: false
   },
   // 排序
   sorting() {
@@ -109,6 +114,9 @@ Page({
     this.setData({
       clickItem: e.currentTarget.dataset.index
     })
+    wx.navigateTo({
+      url: `../musicPlay/musicPlay?djProgramId=${e.currentTarget.dataset.item.id}&musicId=${e.currentTarget.dataset.item.mainSong.id}&djFlag=${true}`,
+    })
   },
   /**
    * 生命周期函数--监听页面加载
@@ -133,7 +141,11 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function() {
-
+    if (this.store.data.playFlag) {
+      this.setData({
+        bottomFlag: true
+      })
+    }
   },
 
   /**

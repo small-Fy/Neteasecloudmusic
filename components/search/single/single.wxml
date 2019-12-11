@@ -1,5 +1,5 @@
 <scroll-view scroll-y="true" style="height: 1020rpx;" bindscrolltolower="toBottom">
-  <view class="single">
+  <view class="single" wx:if="{{dataFlag}}">
     <view class="inner">
       <view class="top">
         <view class="left">
@@ -39,4 +39,8 @@
       <view class="moreText" wx:if="{{searchMsg.song.more}}">{{searchMsg.song.moreText}}></view>
     </view>
   </view>
+
+  <view class="data_none"  wx:if="{{!dataFlag}}">
+  暂无数据
+</view>
 </scroll-view>

@@ -17,6 +17,10 @@
 
 .navigationBar .msg .text {
   font-size: 36rpx;
+  width: 450rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .navigationBar .msg .copywriter {

@@ -1,18 +1,18 @@
-<view class="bottom">
+<view class="bottom" bindtap="toPlay" wx:if="{{$.playFlag}}">
   <view class="left">
     <view class="poster">
-      <image src="{{musicDetail.poster}}"></image>
+      <image src="{{$.poster}}"></image>
     </view>
     <view class="music">
-      <view class="name">{{musicDetail.musicName}}</view>
-      <view class="author">{{musicDetail.singerName}}</view>
+      <view class="name">{{$.name}}</view>
+      <view class="author">{{$.author}}</view>
     </view>
   </view>
   <view class="right">
-    <view class="play" bindtap="audioPlay" wx:if="{{!startFlag}}">
+    <view class="play" catchtap="audioPlay" wx:if="{{!startFlag}}">
       <image src="../../images/music-play.png"></image>
     </view>
-    <view class="pause" bindtap="audioPause" wx:if="{{startFlag}}">
+    <view class="pause" catchtap="audioPause" wx:if="{{startFlag}}">
       <image src="../../images/pause.png"></image>
     </view>
     <view class="menu">

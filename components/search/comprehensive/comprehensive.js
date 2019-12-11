@@ -11,8 +11,9 @@ Component({
   },
   observers: {
     "keyWord" (value) {
-      time.throttle(
-        this.getMsg(value, this.data.offset, this.data.limit, this.data.type[0]), 1000)
+      if (value !== "") {
+        this.getMsg(value, this.data.offset, this.data.limit, this.data.type[0])
+      }
     }
   },
   /**
@@ -21,6 +22,8 @@ Component({
   data: {
     // 用户搜索信息
     searchMsg: {},
+    // 是否有数据标志
+    dataFlag: true,
     // 偏移量，用于分页
     offset: 0,
     // 每页数据量
@@ -28,9 +31,6 @@ Component({
     type: ["1018", "1", "1014", "100", "10", "1000", "1009", "1002"],
     // 性别图片
     genderList: ["", "../../../images/male.png", "../../../images/female.png"]
-  },
-  ready() {
-    this.getMsg(this.properties.keyWord, this.data.offset, this.data.limit, this.data.type[0])
   },
 
   /**
@@ -43,7 +43,8 @@ Component({
         title: '加载中',
       })
       app.globalData.fly.get(`/search?keywords=${keyword}&offset=${offset}&limit=${limit}&type=${type}`).then(res => {
-        if (res) {
+        console.log(res,666)
+        if (res.data.result.order.length>0) {
           wx.hideLoading()
           let mins = ""
           let sec = ""
@@ -64,12 +65,24 @@ Component({
             item.playCount = item.playCount / 10000 > 10 ? `${(item.playCount / 10000).toFixed(1)}万` : item.playCount
           })
           this.setData({
-            searchMsg: res.data.result
+            searchMsg: res.data.result,
+            dataFlag: true
           })
+        } else {
+          this.setData({
+            dataFlag: false
+          })
+          wx.hideLoading()
         }
       }).catch(err => {
         console.log(err)
       })
     },
+    // 点击单曲播放
+    toPlay(e) {
+      wx.navigateTo({
+        url: `../../pages/musicPlay/musicPlay?musicId=${e.currentTarget.dataset.item.id}&name=${e.currentTarget.dataset.item.name}`,
+      })
+    }
   }
 })

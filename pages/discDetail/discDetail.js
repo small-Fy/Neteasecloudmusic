@@ -1,6 +1,9 @@
 const app = new getApp()
 let time = require('../../utils/util.js')
-Page({
+import create from '../../utils/create'
+import store from '../../store/index'
+create.Page(store, {
+  use: ['name', 'author', 'poster', 'src', 'playFlag'],
 
   /**
    * 页面的初始数据
@@ -40,8 +43,6 @@ Page({
           publishTime: time.formatTimeTwo(res.data.album.publishTime, 'Y-M-D')
         })
       }
-      console.log(this.data.album, "album")
-      console.log(this.data.songs, "songs")
     }).catch(err => {
       console.log(err)
     })

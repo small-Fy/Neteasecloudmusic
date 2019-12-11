@@ -98,30 +98,8 @@
   </view>
 </view>
 
-<view class="vedios" wx:if="{{topIndex===3}}">
-  <view class="item" wx:for="{{searchMsg}}" wx:key="{{index}}">
-    <view class="left">
-      <view class="coverUrl">
-        <image src="{{item.coverUrl}}"></image>
-      </view>
-      <view class="playCount">
-        <view class="img">
-          <image src="../../../images/play.png"></image>
-        </view>
-        <view>{{item.playTime}}</view>
-      </view>
-    </view>
-    <view class="right">
-      <view class="msg">{{item.title}}</view>
-      <view class="bottom">
-        <view class="durationms">{{item.durationms}}</view>
-        <text class="userName">by\t{{item.creator[0].userName}}</text>
-      </view>
-    </view>
-  </view>
-</view>
 
-<view class="events" wx:if="{{topIndex===4}}">
+<view class="events" wx:if="{{topIndex===3}}">
   <view class="item" wx:for="{{events}}" wx:key="{{index}}">
     <view class="left">
       <view class="avatarUrl">
@@ -163,4 +141,4 @@
 
 
 
-<musicList class="bottom" wx:if="{{bottomFlag}}" name="{{name}}" author="{{author}}" poster="{{poster}}" backgroundAudio="{{backgroundAudio}}" startFlag="{{startFlag}}" src="{{src}}"></musicList>
+<musicList class="bottom" wx:if="{{bottomFlag}}"></musicList>

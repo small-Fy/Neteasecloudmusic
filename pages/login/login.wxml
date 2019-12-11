@@ -50,3 +50,5 @@
     </view>
   </view>
 </view>
+
+<musicList class="bottom" wx:if="{{bottomFlag}}"></musicList>
